@@ -1,0 +1,64 @@
+.mess-cut-main {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .mess-cut-heading {
+    margin-bottom: 30px;
+    font-size: 50px;
+    color: #333;
+    font-family: cursive;
+    text-shadow: 2px 2px 2px #ccc;
+    text-align: center;
+  }
+  
+  .mess-cut-main form {
+    border: none;
+  }
+  
+  .mess-cut-main form div {
+    margin-bottom: 15px;
+  }
+  
+  .mess-cut-main label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .mess-cut-main input {
+    width: 100%; /* Adjusted width for responsiveness */
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .mess-cut-main {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .mess-cut-heading {
+      font-size: 33px !important;
+    }
+  
+    .mess-cut-main label {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mess-cut-heading {
+      font-size: 28px;
+    }
+  
+    .mess-cut-main label {
+      font-size: 14px;
+    }
+  }
+  
