@@ -1,0 +1,135 @@
+.mess-cut-permission-form-main {
+    width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-heading {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    color: #333;
+    text-shadow: 2px 2px 2px #ccc;
+    text-align: center;
+  }
+  
+  .form-subheading {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .form-enquiry {
+    margin-bottom: 50px;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .mess-cut-permission-form-main form {
+    border: none;
+  }
+  
+  .mess-cut-permission-form-main form div {
+    margin-bottom: 15px;
+  }
+  
+  .mess-cut-permission-form-main label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .mess-cut-permission-form-main input,
+  .mess-cut-permission-form-main textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .mess-cut-permission-form-main textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-buttons button {
+    width: 48%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .mess-cut-permission-form-main {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .form-heading {
+      font-size: 33px !important;
+    }
+  
+    .form-subheading {
+      font-size: 18px;
+    }
+  
+    .form-enquiry {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  
+    .mess-cut-permission-form-main label {
+      font-size: 16px;
+    }
+  
+    .form-buttons {
+      flex-direction: column;
+    }
+  
+    .form-buttons button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-heading {
+      font-size: 28px;
+    }
+  
+    .form-subheading {
+      font-size: 16px;
+    }
+  
+    .form-enquiry {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  
+    .mess-cut-permission-form-main label {
+      font-size: 14px;
+    }
+  
+    .form-buttons button {
+      font-size: 14px;
+    }
+  }
+  
