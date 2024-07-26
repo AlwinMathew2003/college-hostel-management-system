@@ -1,16 +1,37 @@
 import React from "react";
 import "./MessCutPermissionForm.css";
+import { motion } from "framer-motion";
 
 const MessCutPermissionForm = () => {
   return (
     <div className="mess-cut-permission-form-main">
-      <h1 className="form-heading" style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Mess Cut Permission Form</h1>
-      <p className="form-subheading">
-        ( Permission requested here is just for mess cut only.<b> Permission to leave
-        and enter hostel should be sought separately via proper channel </b> )
-      </p>
-      <p className="form-enquiry">For further enquiry: 9446047155</p>
-      <form action="/submit-mess-cut-permission" method="post">
+      <h1
+        style={{
+          fontSize: "50px",
+          color: "#333",
+          fontFamily: "cursive",
+          textShadow: "2px 2px 2px #ccc"
+        }}
+      >
+        Mess Cut Permission Form
+      </h1>
+      <motion.p
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1 }}
+        className="form-subheading"
+      >
+        ( Permission requested here is just for mess cut only.
+        <b> Permission to leave and enter hostel should be sought separately via proper channel </b> )
+      </motion.p>
+      <motion.p className="form-enquiry">For further enquiry: 9446047155</motion.p>
+      <motion.form
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1 }}
+        action="/submit-mess-cut-permission"
+        method="post"
+      >
         <div>
           <label htmlFor="leavingDate">Leaving Date:</label>
           <input type="date" id="leavingDate" name="leavingDate" required />
@@ -35,18 +56,9 @@ const MessCutPermissionForm = () => {
           <button type="submit">Submit</button>
           <button type="button">View Request</button>
         </div>
-      </form>
-      {/* <p className="form-subheading">
-        (https://adtjcs.in/santhome_demo/loginstudpage/request_view)
-            Apology View
-            (https://adtjcs.in/santhome_demo/loginstudpage/appology_view)
-      </p> */}
+      </motion.form>
     </div>
   );
 };
 
 export default MessCutPermissionForm;
-
-
-
-
