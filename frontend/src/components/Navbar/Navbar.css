@@ -1,19 +1,23 @@
+/* Reset box-sizing and margin */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0px;
-  font-family: "segoe ui";
+  font-family: "Segoe UI";
 }
 
+/* Navbar container */
 .nav {
-  height: 50px;
+  height: 80px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #112D4E;
   position: relative;
+  z-index: 1; /* Ensure nav is below other elements */
 }
 
+/* Navbar header */
 .nav > .nav-header {
   display: inline;
 }
@@ -22,22 +26,50 @@ body {
   display: inline-block;
   font-size: 22px;
   color: #fff;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
 }
 
+/* Navbar button (hidden by default) */
 .nav > .nav-btn {
   display: none;
 }
 
+/* Navbar links container */
 .nav > .nav-links {
-  display: inline;
+  display: flex;
+  align-items: center;
   float: right;
   font-size: 18px;
 }
 
+/* User section within links */
+.nav > .nav-links > .nav-user {
+  display: flex;
+  align-items: center;
+}
+
+.nav > .nav-links > .nav-user > .nav-user-name {
+  margin-right: 15px;
+  color: #efefef;
+}
+
+.nav > .nav-links > .nav-user > .nav-messages-text {
+  margin-right: 15px;
+  cursor: pointer;
+  color: #efefef;
+}
+
+.nav > .nav-links > .nav-user > .nav-logout-btn {
+  background: none;
+  border: none;
+  color: #efefef;
+  cursor: pointer;
+}
+
+/* Links within nav */
 .nav > .nav-links > a {
-  display: inline-block;
-  padding: 13px 10px 13px 10px;
+  display: inline-block; /* Ensure links are displayed in normal view */
+  padding: 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
@@ -46,53 +78,121 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown a {
+  color: #efefef;
+  text-decoration: none;
+  padding: 13px 10px;
+  cursor: pointer; /* Add cursor pointer for clickable element */
+}
+
+.dropdown-menu {
+  display: none; /* Hide dropdown menu by default */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #184b86;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure dropdown menu is above other elements */
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #112D4E;
+}
+
+.dropdown-active .dropdown-menu {
+  display: flex; /* Show dropdown menu when active */
+}
+
+/* Navbar checkbox (hidden) */
 .nav > #nav-check {
   display: none;
 }
 
+/* Responsive styles */
 @media (max-width: 600px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
+    z-index: 3; /* Ensure the button is above other elements */
   }
+
   .nav > .nav-btn > label {
     display: inline-block;
     width: 50px;
     height: 50px;
     padding: 13px;
   }
+
   .nav > .nav-btn > label:hover,
   .nav #nav-check:checked ~ .nav-btn > label {
     background-color: rgba(0, 0, 0, 0.3);
   }
+
   .nav > .nav-btn > label > span {
     display: block;
     width: 25px;
     height: 10px;
     border-top: 2px solid #eee;
   }
+
   .nav > .nav-links {
     position: absolute;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
     width: 100%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
+    background-color: #112D4E;
+    max-height: 0; /* Start with zero height */
+    transition: max-height 0.3s ease-in; /* Smooth transition */
     overflow-y: hidden;
     top: 50px;
-    left: 0px;
+    left: 0;
+    z-index: 2; /* Ensure links are above other elements */
   }
+
   .nav > .nav-links > a {
-    display: block;
+    display: block; /* Ensure links are displayed in mobile view */
     width: 100%;
+    padding: 10px;
+    text-align: center; /* Center the text */
   }
+
+  .nav > .nav-links > .nav-user {
+    flex-direction: column;
+    align-items: center; /* Center the user section */
+  }
+
+  .nav > .nav-links > .nav-user > .nav-messages-text,
+  .nav > .nav-links > .nav-user > .nav-logout-btn {
+    margin: 10px;
+  }
+
   .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
+    max-height: 0;
   }
+
   .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 50px);
+    max-height: 300px; /* Adjust based on content */
     overflow-y: auto;
+  }
+
+  .dropdown-menu {
+    z-index: 3; /* Ensure dropdown menu is above the mobile menu */
   }
 }

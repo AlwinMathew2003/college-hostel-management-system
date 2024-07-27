@@ -5,12 +5,12 @@
   }
   
   .mess-cut-heading {
-    margin-bottom: 30px;
-    font-size: 50px;
-    color: #333;
-    font-family: cursive;
-    text-shadow: 2px 2px 2px #ccc;
+    width: 90%;
+    padding: 15px;
+    font-size: 40px;
+    font-weight:bold ;
     text-align: center;
+    padding-bottom: 35px;
   }
   
   .mess-cut-main form {
@@ -44,7 +44,7 @@
     }
   
     .mess-cut-heading {
-      font-size: 33px !important;
+      font-size: 36px !important;
     }
   
     .mess-cut-main label {

@@ -2,8 +2,16 @@
     width: 800px; 
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
-  
+  .mess-cut-permission-form-main-h1{
+    width: 90%;
+    padding: 15px;
+    font-size: 40px;
+    font-weight:bold ;
+    text-align: center;
+    padding-bottom: 35px;
+  }
   .form-heading {
     margin-bottom: 10px;
     font-weight: bold;
@@ -17,14 +25,14 @@
   .form-subheading {
     margin-bottom: 10px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .form-enquiry {
     margin-bottom: 50px;
     font-size: 19px;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
   }
   
   .mess-cut-permission-form-main form {
@@ -40,6 +48,7 @@
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 18px;
+    text-align: left;
   }
   
   .mess-cut-permission-form-main input,
@@ -81,7 +90,15 @@
     .mess-cut-permission-form-main {
       width: 90%;
       padding: 15px;
-      font-size: 20px;
+      font-size: 18px;
+    }
+    .mess-cut-permission-form-main-h1{
+      width: 90%;
+      padding: 15px;
+      font-size: 33px;
+      font-weight:bold ;
+      text-align: center;
+      padding-bottom: 35px;
     }
   
     .form-heading {
@@ -89,16 +106,19 @@
     }
   
     .form-subheading {
-      font-size: 18px;
+      font-size: 20px;
+      text-align: left;
     }
   
     .form-enquiry {
-      font-size: 16px;
+      font-size: 160px;
       margin-bottom: 30px;
+      text-align: left;
     }
   
     .mess-cut-permission-form-main label {
-      font-size: 16px;
+      text-align: left;
+      font-size: 17px !important;
     }
   
     .form-buttons {
