@@ -1,0 +1,94 @@
+/* Unique container for the Monthly Attendance Report page */
+.monthly-attendance-report-container {
+    padding: 50px;
+    margin: 0; /* Remove margin around the container */
+    padding-right: 200px; /* Add padding for right side */
+}
+
+/* Content area with heading and form */
+.monthly-attendance-report-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.monthly-attendance-report-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form group styles */
+.monthly-attendance-report-form-group {
+    margin-bottom: 20px;
+}
+
+.monthly-attendance-report-form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Input styles */
+.monthly-attendance-report-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.monthly-attendance-report-buttons {
+    margin-top: 20px;
+}
+
+.monthly-attendance-report-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color for button */
+    cursor: pointer;
+}
+
+.monthly-attendance-report-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+    /* Adjust container padding */
+    .monthly-attendance-report-container {
+        padding: 20px;
+        padding-right: 0; /* Remove right padding on mobile */
+    }
+
+    /* Reduce font size of heading */
+    .monthly-attendance-report-heading {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust form group margin */
+    .monthly-attendance-report-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Adjust input padding and font size */
+    .monthly-attendance-report-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Adjust button padding and font size */
+    .monthly-attendance-report-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

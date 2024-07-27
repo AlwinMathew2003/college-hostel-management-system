@@ -1,0 +1,116 @@
+/* Unique container for the Apology Request page */
+.apology-request-container {
+    padding: 10px;
+    margin: 0; /* Remove margin around the container */
+}
+
+/* Content area with heading and controls */
+.apology-request-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.apology-request-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Controls above the table */
+.apology-request-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Entries dropdown */
+.apology-request-entries {
+    display: flex;
+    align-items: center;
+}
+
+/* Label for entries dropdown */
+.apology-request-entries label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Dropdown for entries */
+.apology-request-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search input container */
+.apology-request-search {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input style */
+.apology-request-search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjust width as needed */
+}
+
+/* Table styles */
+.apology-request-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.apology-request-table th, .apology-request-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.apology-request-table th {
+    background-color: #f4f4f4;
+}
+
+.apology-request-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Action button styles */
+.apology-request-action-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color for button */
+    cursor: pointer;
+}
+
+.apology-request-action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .apology-request-container {
+        padding: 20px;
+    }
+
+    .apology-request-heading {
+        font-size: 30px;
+    }
+
+    .apology-request-search-input {
+        width: 200px; /* Adjust width for smaller screens */
+    }
+}

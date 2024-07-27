@@ -1,0 +1,82 @@
+/* Unique container for the Apology Request page */
+.apology-request-container {
+    padding-left: 50px !important ;
+    margin: 0; /* Remove margin around the container */
+    padding-right: 200px !important;
+}
+
+/* Content area with heading and form */
+.apology-request-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.apology-request-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form group styles */
+.apology-request-form-group {
+    margin-bottom: 20px;
+}
+
+.apology-request-form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Dropdown and textarea styles */
+.apology-request-dropdown, .apology-request-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.apology-request-textarea {
+    height: 100px; /* Adjust height as needed */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Button styles */
+.apology-request-buttons {
+    margin-top: 20px;
+}
+
+.apology-request-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color for button */
+    cursor: pointer;
+}
+
+.apology-request-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .apology-request-container {
+        padding: 20px;
+    }
+
+    .apology-request-heading {
+        font-size: 30px;
+    }
+
+    .apology-request-textarea {
+        height: 80px; /* Adjust height for smaller screens */
+    }
+}
