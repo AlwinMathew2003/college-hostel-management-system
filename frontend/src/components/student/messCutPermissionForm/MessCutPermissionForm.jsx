@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 const MessCutPermissionForm = () => {
   return (
     <div className="mess-cut-permission-form-main">
-      <h1
+      <h1 className="mess-cut-permission-form-main-h1"
         style={{
-          fontSize: "50px",
+         
           color: "#333",
           fontFamily: "cursive",
-          textShadow: "2px 2px 2px #ccc"
+          textShadow: "2px 2px 2px #ccc",
+          
         }}
       >
         Mess Cut Permission Form
@@ -24,7 +25,11 @@ const MessCutPermissionForm = () => {
         ( Permission requested here is just for mess cut only.
         <b> Permission to leave and enter hostel should be sought separately via proper channel </b> )
       </motion.p>
-      <motion.p className="form-enquiry">For further enquiry: 9446047155</motion.p>
+      <motion.p 
+      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: -100 }}
+      transition={{ duration: 1 }}
+      className="form-enquiry">For further enquiry: 9446047155</motion.p>
       <motion.form
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}

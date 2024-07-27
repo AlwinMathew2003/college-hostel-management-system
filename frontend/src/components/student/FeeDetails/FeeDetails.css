@@ -6,7 +6,12 @@
   }
   
   .fee-details-heading {
-    margin-bottom: 50px;
+    width: 90%;
+    padding: 15px;
+    font-size: 43px !important;
+    font-weight:bold ;
+    text-align: center;
+    padding-bottom: 35px;
   }
   
   .fee-details-months {
@@ -30,7 +35,8 @@
   
   @media (max-width: 768px) {
     .fee-details-heading {
-      font-size: 28px;
+      font-size: 33px !important;
+      font-weight: bold;
     }
   
     .fee-details-months {
