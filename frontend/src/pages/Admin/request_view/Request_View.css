@@ -1,0 +1,123 @@
+/* Unique container for the Student Details page */
+.student-details-container {
+    padding: 50px;
+    margin: 0; /* Remove margin around the container */
+    padding-right: 100px;
+}
+
+/* Content area with heading and controls */
+.student-details-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.student-details-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Controls above the table */
+.student-details-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Dropdown for entries */
+.student-details-entries {
+    display: flex;
+    align-items: center;
+}
+
+/* Label for the entries dropdown */
+.student-details-entries label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styles for the entries dropdown */
+.student-details-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search input container */
+.student-details-search {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input style */
+.student-details-search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjust width as needed */
+}
+
+/* Table styles */
+.student-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-details-table th, .student-details-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+.student-details-table th {
+    background-color: #f4f4f4;
+}
+
+.student-details-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button styles */
+.student-details-action-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color for button */
+    cursor: pointer;
+}
+
+.student-details-action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 600px) {
+    .student-details-container {
+        padding: 20px;
+    }
+
+    .student-details-heading {
+        font-size: 30px;
+    }
+
+    /* Stack controls vertically on mobile screens */
+    .student-details-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust search input to fit below entries dropdown */
+    .student-details-search {
+        margin-top: 10px;
+    }
+}
