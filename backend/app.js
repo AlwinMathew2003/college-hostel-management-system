@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://tbi-user:Sfn09Ysegdwtjc9IB@collegehostelmanagement.r8desjj.mongodb.net/collegeHostelManagement?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://akhiljosetcr:kR1i0eZiPMZBqZGl@college-hostel.daqchog.mongodb.net/?retryWrites=true&w=majority&appName=College-Hostel')
 .then(()=>{
 console.log("MongoDB Connected")
 })
