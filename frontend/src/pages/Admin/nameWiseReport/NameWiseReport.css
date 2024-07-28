@@ -1,0 +1,192 @@
+/* Unique container for the NameWiseReport page */
+.name-wise-report-container {
+    padding: 40px;
+    margin: 0; /* Remove margin around the container */
+    padding-right:200px ;
+    padding-bottom: 100px;
+}
+
+/* Content area with heading and form */
+.name-wise-report-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.name-wise-report-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form group styles */
+.name-wise-report-form-group {
+    margin-bottom: 20px;
+}
+
+.name-wise-report-form-group label {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight:bold ;
+    padding-bottom: 35px;
+}
+
+/* Unique dropdown styles */
+.name-wise-report-dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.name-wise-report-buttons {
+    margin-bottom: 20px;
+}
+
+.name-wise-report-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.name-wise-report-button:first-of-type {
+    background-color: #007bff; /* Blue for Load Data */
+}
+
+.name-wise-report-button:nth-of-type(2) {
+    background-color: #28a745; /* Green for Create PDF */
+}
+
+.name-wise-report-button:last-of-type {
+    background-color: #dc3545; /* Red for Create Excel */
+}
+
+/* Hover effects for buttons */
+.name-wise-report-button:hover {
+    background-color: #0056b3; /* Darker blue for Load Data */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.name-wise-report-button:nth-of-type(2):hover {
+    background-color: #218838; /* Darker green for Create PDF */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.name-wise-report-button:last-of-type:hover {
+    background-color: #c82333; /* Darker red for Create Excel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls above the table */
+.name-wise-report-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Dropdown for entries */
+.name-wise-report-entries {
+    display: flex;
+    align-items: center;
+}
+
+/* Label for the entries dropdown */
+.name-wise-report-entries label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styles for the entries dropdown */
+.name-wise-report-entries select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search input container */
+.name-wise-report-search {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input style */
+.name-wise-report-search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjust width as needed */
+}
+
+/* Table styles */
+.name-wise-report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.name-wise-report-table th, .name-wise-report-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+  
+.name-wise-report-table th {
+    background-color: #f4f4f4;
+}
+
+.name-wise-report-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+
+    .name-wise-report-container {
+      padding: 10px !important;
+        margin: 0; /* Remove margin around the container */
+    }
+
+    .name-wise-report-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+        
+    }
+
+    .name-wise-report-dropdown {
+        font-size: 14px;
+    }
+
+    .name-wise-report-heading {
+        width: 90%;
+        padding: 10px;
+        font-size: 35px !important;
+        font-weight: bold;
+        padding-bottom: 35px;
+    }
+
+    /* Stack controls vertically on mobile screens */
+    .name-wise-report-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust search input to fit below entries dropdown */
+    .name-wise-report-search {
+        margin-top: 10px; /* Add margin to space out from the entries dropdown */
+    }
+}

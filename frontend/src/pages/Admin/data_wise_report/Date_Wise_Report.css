@@ -1,0 +1,172 @@
+/* Unique container for the Date Wise Report page */
+.date-wise-report-container {
+    padding: 50px;
+    margin: 0; /* Remove margin around the container */
+    padding-right: 200px;
+
+}
+
+/* Content area with heading and form */
+.date-wise-report-content {
+    max-width: 100%; /* Ensure content uses full width */
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Heading style */
+.date-wise-report-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form group styles */
+.date-wise-report-form-group {
+    margin-bottom: 20px;
+}
+
+.date-wise-report-form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Input styles */
+.date-wise-report-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.date-wise-report-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.date-wise-report-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue color for button */
+    cursor: pointer;
+}
+
+.date-wise-report-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Controls above the table */
+.date-wise-report-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Dropdown for entries */
+.date-wise-report-entries {
+    display: flex;
+    align-items: center;
+}
+
+/* Label for the entries dropdown */
+.date-wise-report-entries label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styles for the entries dropdown */
+.date-wise-report-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search input container */
+.date-wise-report-search {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input style */
+.date-wise-report-search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjust width as needed */
+}
+
+/* Table styles */
+.date-wise-report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.date-wise-report-table th, .date-wise-report-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.date-wise-report-table th {
+    background-color: #f4f4f4;
+}
+
+.date-wise-report-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+    /* Adjust container padding */
+    .date-wise-report-container {
+        padding: 20px;
+    }
+
+    /* Reduce font size of heading */
+    .date-wise-report-heading {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust form group margin */
+    .date-wise-report-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Adjust input padding and font size */
+    .date-wise-report-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Adjust button padding and font size */
+    .date-wise-report-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Stack controls vertically on mobile screens */
+    .date-wise-report-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust search input width */
+    .date-wise-report-search-input {
+        width: 100%;
+    }
+}
