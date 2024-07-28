@@ -1,32 +1,27 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const loginSchema = new Schema({
+const complaintSchema = new Schema({
     _id:{
-        type:Number,
+        type:String,
         required:true
     },
     adm_no:{
         type:Number,
         required:true
     },
-    password:{
+    Room_no:{
+        type:Number,
+        required:true
+    },
+    message:{
         type:String,
         required:true
     },
-    role:{
-        type:String,
-        required:true
-    },
-    Date:{
-        type:Date,
-        required:true
-    },
-    time:{
-        type:String,
+    status:{
+        type:Boolean,
         required:true
     }
-    
 })
 
-export const loginModel = mongoose.model('login',loginSchema)
+export const complaintModel = mongoose.model('complaints',complaintSchema)
