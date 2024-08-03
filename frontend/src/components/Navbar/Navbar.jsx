@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = (e) => {
@@ -13,9 +14,7 @@ const Navbar = () => {
   return (
     <div className="nav">
       <input type="checkbox" id="nav-check" />
-      <div className="nav-header">
-        {/* Add logo or title here */}
-      </div>
+      <div className="nav-header">{/* Add logo or title here */}</div>
       <div className="nav-btn">
         <label htmlFor="nav-check">
           <span></span>
@@ -25,9 +24,14 @@ const Navbar = () => {
       </div>
 
       <div className="nav-links" style={{ paddingRight: "30px" }}>
-        <div className={`dropdown ${isDropdownOpen ? 'dropdown-active' : ''}`}>
-          <a href="#" onClick={toggleDropdown} aria-haspopup="true" aria-expanded={isDropdownOpen}>
-            Student
+        <div className={`dropdown ${isDropdownOpen ? "dropdown-active" : ""}`}>
+          <a
+            href="#"
+            onClick={toggleDropdown}
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen}
+          >
+            {!currentUser ? "Student" : currentUser.name}
           </a>
           <div className="dropdown-menu">
             <a href="#">Profile</a>
