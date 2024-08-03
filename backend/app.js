@@ -1,20 +1,19 @@
 // Backend server
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-
-dotenv.config();
+import express, { json } from "express";
+import cors from "cors";
+import { config } from "dotenv";
+import { set, connect } from "mongoose";
+import authUser from "./routes/authentication.js";
+config();
 
 const PORT = process.env.PORT;
 const app = express();
 
-app.use(express.json());
+app.use(json());
 app.use(cors());
-
-mongoose.set("debug", true);
-mongoose
-  .connect(process.env.MONGO)
+app.use("/api/login", authUser);
+set("debug", true);
+connect(process.env.MONGO)
   .then(() => {
     console.log("MongoDB Connected");
   })
