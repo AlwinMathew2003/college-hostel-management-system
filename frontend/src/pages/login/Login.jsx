@@ -9,6 +9,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+  ///For logout
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
