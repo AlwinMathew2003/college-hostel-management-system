@@ -24,4 +24,7 @@ const complaintSchema = new Schema({
     }
 })
 
-export const complaintModel = mongoose.model('complaints',complaintSchema)
+//export const complaintModel = mongoose.model('complaints',complaintSchema)
+
+const complaintModel = mongoose.model('Complaint', complaintSchema); // Model name 'Complaint'
+module.exports = complaintModel; // Exporting the model

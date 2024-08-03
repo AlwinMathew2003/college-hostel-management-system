@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv')
 const mongoose = require("mongoose")
+const complaintRoutes = require("./routes/complaintRoutes");
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use("/api/complaints", complaintRoutes);
 
 mongoose.set('debug', true);
 mongoose.connect('mongodb+srv://akhiljosetcr:kR1i0eZiPMZBqZGl@college-hostel.daqchog.mongodb.net/?retryWrites=true&w=majority&appName=College-Hostel')
