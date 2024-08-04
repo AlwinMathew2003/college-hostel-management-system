@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const messcutpermissionModel = require("../models/mess-request");
+const messcutpermissionModel = require("../../models/mess-request");
 
 // Create a new permission
 router.post("/messcutpermission", async (req, res) => {
