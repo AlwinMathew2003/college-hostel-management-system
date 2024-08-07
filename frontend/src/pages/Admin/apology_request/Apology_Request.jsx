@@ -1,28 +1,43 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import Admin_Navbar from '../../../components/admin_navbar/Admin_Navbar';
 import './Apology_Request.css';
 
 const ApologyRequest = () => {
-    const [roomNo, setRoomNo] = useState('');
-    const [studentName, setStudentName] = useState('');
-    const [admissionNo, setAdmissionNo] = useState('');
-    const [reason, setReason] = useState('');
+    const [Room_no, setRoomNo] = useState('');
+    const [Stud_name, setStudentName] = useState('');
+    const [Adm_no, setAdmissionNo] = useState('');
+    const [Reason, setReason] = useState('');
 
     // Dummy data for dropdowns
     const roomNumbers = ['1001', '1002', '1003']; // Add more options as needed
     const students = ['John Doe', 'Jane Smith', 'Alice Johnson']; // Add more options as needed
     const admissionNumbers = ['JEC328', 'JEC329', 'JEC330']; // Add more options as needed
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // Add logic to handle the apology request submission
-        console.log({
-            roomNo,
-            studentName,
-            admissionNo,
-            reason,
-        });
+        const requestData = {
+            _id: Math.random().toString(36).substr(2, 9), // Generate a random ID
+            Room_no,
+            Stud_name,
+            Reason,
+            date: new Date(), // Current date
+            Apology_no: 1, // This should be dynamically assigned
+            Adm_no,
+            Status: false // Initial status
+        };
+        try {
+            const response = await axios.post("http://localhost:5000/api/apologies/apologyrequest", requestData);
+            console.log('Response:', response.data);
+            alert("Apology request submitted successfully");
+            
+        } catch (error) {
+            console.error('Error submitting the apology request:', error);
+            alert("Error submitting apology request");
+        }
     };
+        
 
     return (
         <div>
@@ -38,7 +53,7 @@ const ApologyRequest = () => {
                                 id="room-no"
                                 name="room-no"
                                 className="apology-request-dropdown"
-                                value={roomNo}
+                                value={Room_no}
                                 onChange={(e) => setRoomNo(e.target.value)}
                             >
                                 <option value="">Select Room No</option>
@@ -53,7 +68,7 @@ const ApologyRequest = () => {
                                 id="student-name"
                                 name="student-name"
                                 className="apology-request-dropdown"
-                                value={studentName}
+                                value={Stud_name}
                                 onChange={(e) => setStudentName(e.target.value)}
                             >
                                 <option value="">Select Student</option>
@@ -68,7 +83,7 @@ const ApologyRequest = () => {
                                 id="admission-no"
                                 name="admission-no"
                                 className="apology-request-dropdown"
-                                value={admissionNo}
+                                value={Adm_no}
                                 onChange={(e) => setAdmissionNo(e.target.value)}
                             >
                                 <option value="">Select Admission No</option>
@@ -83,7 +98,7 @@ const ApologyRequest = () => {
                                 id="reason"
                                 name="reason"
                                 className="apology-request-textarea"
-                                value={reason}
+                                value={Reason}
                                 onChange={(e) => setReason(e.target.value)}
                                 placeholder="Enter reason for apology"
                             />

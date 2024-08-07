@@ -19,7 +19,7 @@ const apologySchema = new Schema(
             type:String,
             required:true
         },
-        Date:{
+        date:{
             type:Date,
             required:true
         },
@@ -38,4 +38,7 @@ const apologySchema = new Schema(
     }
 )
 
-export const apologyModel = mongoose.model('apology',apologySchema);
+//export const apologyModel = mongoose.model('apology',apologySchema);
+
+const apologyModel = mongoose.model('Apology', apologySchema); // Model name 'Apology'
+module.exports = apologyModel; // Exporting the model
