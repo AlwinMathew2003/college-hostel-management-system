@@ -1,22 +1,32 @@
 import React from "react";
 import "./MessCut.css";
-import {motion} from 'framer-motion'
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const MessCut = () => {
+  const currentUser = useSelector((state) => state.user.currentUser);
   return (
     <div className="mess-cut-main">
       <h1
-      className="mess-cut-heading" style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Mess Cut</h1>
-            <motion.form
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1 }}
-        action="/submit-mess-cut-permission"
-        method="post"
+        className="mess-cut-heading"
+        style={{
+          fontSize: "50px",
+          color: "#333",
+          fontFamily: "cursive",
+          textShadow: "2px 2px 2px #ccc",
+        }}
       >
+        Mess Cut
+      </h1>
+      <form>
         <div>
           <label htmlFor="admissionNumber">Admission NO:</label>
-          <input type="text" id="admissionNumber" name="admissionNumber" required />
+          <input
+            type="text"
+            id="admissionNumber"
+            name="admissionNumber"
+            required
+          />
         </div>
         <div>
           <label htmlFor="roomNo">Room No:</label>
@@ -24,9 +34,17 @@ const MessCut = () => {
         </div>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={currentUser.name}
+            style={{ fontWeight: "bold" }}
+            readOnly
+            required
+          />
         </div>
-      </motion.form>
+      </form>
     </div>
   );
 };
