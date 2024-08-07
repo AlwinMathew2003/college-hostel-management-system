@@ -7,77 +7,29 @@ const FeeDetails = () => {
     <div className="fee-details-container">
       <h1 className="fee-details-heading"  style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Fee Details</h1>
       <div className="fee-details-months">
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Jan</motion.span>
+        <span>Jan</span>
 
-         <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Feb</motion.span>
+         <span>Feb</span>
 
-       <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Mar</motion.span>
+       <span>Mar</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Apr</motion.span>
+        <span>Apr</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >May</motion.span>
+        <span>May</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Jun</motion.span>
+        <span>Jun</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Jul</motion.span>
+        <span>Jul</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Aug</motion.span>
+        <span>Aug</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Sep</motion.span>
+        <span>Sep</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Oct</motion.span>
+        <span>Oct</span>
         
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Nov</motion.span>
+        <span>Nov</span>
 
-        <motion.span
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opactiy: 0, x: -100 }}
-          transition={{ duration: 0.9 }}
-        >Dec</motion.span>
+        <span>Dec</span>
       </div>
     </div>
   );
