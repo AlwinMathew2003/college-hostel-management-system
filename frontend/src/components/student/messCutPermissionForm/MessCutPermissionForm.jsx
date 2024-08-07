@@ -78,10 +78,7 @@ const MessCutPermissionForm = () => {
       initial={{ opacity: 0, x: -100 }}
       transition={{ duration: 1 }}
       className="form-enquiry">For further enquiry: 9446047155</motion.p>
-      <motion.form
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1 }}
+      <form
         /*action="/submit-mess-cut-permission"
         method="post"*/
         onSubmit={handleSubmit}
@@ -126,7 +123,7 @@ const MessCutPermissionForm = () => {
           <button type="submit">Submit</button>
           <button type="button">View Request</button>
         </div>
-      </motion.form>
+      </form>
     </div>
   );
 };
