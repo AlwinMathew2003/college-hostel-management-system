@@ -38,7 +38,4 @@ const apologySchema = new Schema(
     }
 )
 
-//export const apologyModel = mongoose.model('apology',apologySchema);
-
-const apologyModel = mongoose.model('Apology', apologySchema); // Model name 'Apology'
-module.exports = apologyModel; // Exporting the model
+export default mongoose.model('apology',apologySchema);

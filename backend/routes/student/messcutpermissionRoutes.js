@@ -1,17 +1,7 @@
-const express = require("express");
-const router = express.Router();
-const messcutpermissionModel = require("../../models/mess-request");
+import Express from "express";
+import { messcutPermissionPost } from "../../controllers/student/messCut.js";
+const router = Express.Router();
 
-// Create a new permission
-router.post("/messcutpermission", async (req, res) => {
-  try {
-    const { _id, adm_no, leavingDate,leavingTime,reason,returningDate,returningTime, status } = req.body;
-    const newpermission = new messcutpermissionModel({ _id, adm_no, leavingDate,leavingTime,reason,returningDate,returningTime, status });
-    await newpermission.save();
-    res.status(201).json(newpermission);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
+router.post("/messcutpermission", messcutPermissionPost);
 
-module.exports=router
+export default router;

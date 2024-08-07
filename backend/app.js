@@ -4,16 +4,13 @@ import cors from "cors";
 import { config } from "dotenv";
 import { set, connect } from "mongoose";
 import authUser from "./routes/authentication.js";
-config();
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv')
-const mongoose = require("mongoose")
-const complaintRoutes = require("./routes/student/complaintRoutes");
-const messcutpermissionRoutes = require("./routes/student/messcutpermissionRoutes")
-const apologyRoutes = require("./routes/admin/apologyRoutes")
+import complaintRoutes from "./routes/student/complaintRoutes.js";
+import messcutpermissionRoutes from "./routes/student/messcutpermissionRoutes.js";
+import apologyRoutes from "./routes/admin/apologyRoutes.js"
 
-dotenv.config();
+config();
+
+
 
 const PORT = process.env.PORT;
 const app = express();
