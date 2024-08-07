@@ -36,4 +36,7 @@ const messRequestSchema = new Schema({
     },
 })
 
-export const messRequestModel = mongoose.model('mess-request',messRequestSchema)
+//export const messRequestModel = mongoose.model('mess-request',messRequestSchema)
+
+const messcutpermissionModel = mongoose.model('messcutpermission', messRequestSchema); // Model name 'messcutpermission'
+module.exports = messcutpermissionModel; // Exporting the model
