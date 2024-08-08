@@ -36,4 +36,4 @@ const messCutSchema = new Schema({
     }
 })
 
-export const messCutModel = mongoose.model("mess-cut",messCutSchema)
+export default mongoose.model("mess-cut",messCutSchema)

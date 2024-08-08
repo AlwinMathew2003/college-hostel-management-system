@@ -16,4 +16,4 @@ const messSchema = new Schema({
     }
 })
 
-const messModel = mongoose.model('mess',messSchema)
+export default mongoose.model('mess',messSchema)

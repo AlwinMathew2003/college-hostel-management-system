@@ -52,4 +52,4 @@ const FeeSchema = new Schema({
     },
 })
 
-export const FeeModel = mongoose.model('fees',FeeSchema)
+export default mongoose.model('fees',FeeSchema)
