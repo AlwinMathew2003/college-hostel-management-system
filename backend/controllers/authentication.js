@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Student from "../models/LoginTest.js";
+import Student from "../models/login.js";
 
 export const signin = async (req, res) => {
   try {
@@ -11,7 +11,7 @@ export const signin = async (req, res) => {
       res.json({ message: "wrong creds" });
     }
   } catch {
-    print("not found!!!");
+    console.log("not found!!!");
   }
 };
 
