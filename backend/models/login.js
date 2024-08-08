@@ -29,4 +29,4 @@ const loginSchema = new Schema({
     
 })
 
-export const loginModel = mongoose.model('login',loginSchema)
+export default mongoose.model('login',loginSchema,'login')

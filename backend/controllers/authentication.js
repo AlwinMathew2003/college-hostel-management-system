@@ -3,8 +3,11 @@ import Student from "../models/login.js";
 
 export const signin = async (req, res) => {
   try {
-    const user = await Student.findOne({ name: req.body.name });
-
+    // console.log(req.body)
+    // const users = await Student.find({});
+    // console.log(users)
+    const user = await Student.findOne({ adm_no: req.body.admno });
+    // console.log(user)
     if (user.password === req.body.password) {
       res.json(user);
     } else {

@@ -5,7 +5,7 @@ import { loginFailure, loginStart, loginSucces } from "../../redux/userSlice";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [name, setName] = useState("");
+  const [admno, setAdmno] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const Login = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post("http://localhost:5000/api/login", {
-        name,
+        admno,
         password,
       });
       console.log(res.data);
@@ -34,20 +34,20 @@ const Login = () => {
         <form className="max-w-sm mx-auto">
           <div className="mb-5">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Your name
+              Enter you admission number
             </label>
             <input
-              type="text"
+              type="number"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="name@example.com"
+              placeholder="101"
               required
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setAdmno(e.target.value)}
             />
           </div>
           <div className="mb-5">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Your password
+              Enter your password
             </label>
             <input
               type="password"

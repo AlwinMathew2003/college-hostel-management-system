@@ -31,7 +31,7 @@ const Navbar = () => {
             aria-haspopup="true"
             aria-expanded={isDropdownOpen}
           >
-            {!currentUser ? "Student" : currentUser.name}
+            {!currentUser ? "Student" : currentUser.role}
           </a>
           <div className="dropdown-menu">
             <a href="#">Profile</a>
