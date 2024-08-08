@@ -31,7 +31,11 @@ const ComplaintForm = () => {
 
   return (
     <div className="complaint-form-container">
-      <h1 className="complaint-form-heading"  style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Complaint Form</h1>
+      <motion.h1 className="complaint-form-heading"
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Complaint Form</motion.h1>
       <form onSubmit={handleSubmit}>
         <div
 

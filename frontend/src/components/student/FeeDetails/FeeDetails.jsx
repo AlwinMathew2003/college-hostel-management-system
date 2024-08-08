@@ -5,7 +5,11 @@ import{motion} from 'framer-motion'
 const FeeDetails = () => {
   return (
     <div className="fee-details-container">
-      <h1 className="fee-details-heading"  style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Fee Details</h1>
+      <motion.h1 className="fee-details-heading"
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Fee Details</motion.h1>
       <div className="fee-details-months">
         <span>Jan</span>
 
