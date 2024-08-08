@@ -31,19 +31,20 @@ const ComplaintForm = () => {
 
   return (
     <div className="complaint-form-container">
-      <h1 className="complaint-form-heading"  style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Complaint Form</h1>
+      <motion.h1 className="complaint-form-heading"
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Complaint Form</motion.h1>
       <form onSubmit={handleSubmit}>
-        <motion.div 
-         whileInView={{ opacity: 1, x: 0 }}
-         initial={{ opactiy: 0, x: -100 }}
-         transition={{ duration: 0.9 }}
+        <div
 
         className="complaint-form-group">
           
           <label htmlFor="complain">Complaint:</label>
           <textarea id="complain" name="complain" rows="5"  value={complain}
             onChange={(e) => setComplain(e.target.value)} required></textarea>
-        </motion.div>
+        </div>
         <button type="submit" className="complaint-form-submit">SUBMIT</button>
       </form>
     </div>
