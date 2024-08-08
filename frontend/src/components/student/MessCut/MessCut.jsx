@@ -1,13 +1,14 @@
 import React from "react";
 import "./MessCut.css";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 const MessCut = () => {
-  const currentUser = useSelector((state) => state.user.currentUser);
+  // const currentUser = useSelector((state) => state.user.currentUser);
+  
   return (
     <div className="mess-cut-main">
-      <h1
+      <motion.h1
         className="mess-cut-heading"
         style={{
           fontSize: "50px",
@@ -15,9 +16,12 @@ const MessCut = () => {
           fontFamily: "cursive",
           textShadow: "2px 2px 2px #ccc",
         }}
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
       >
         Mess Cut
-      </h1>
+      </motion.h1>
       <form>
         <div>
           <label htmlFor="admissionNumber">Admission NO:</label>
@@ -38,7 +42,7 @@ const MessCut = () => {
             type="text"
             id="name"
             name="name"
-            value={currentUser.name}
+            // value={currentUser.name}
             style={{ fontWeight: "bold" }}
             readOnly
             required
