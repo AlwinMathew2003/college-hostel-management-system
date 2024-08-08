@@ -1,0 +1,7 @@
+_id,adm_no,Room_no,name,Dept,Semester,GuardianName,mail_id ,Date_updated
+1,12112020,458,Alwin Mathew,CSE,S7,Mathew's Mon,alwinmathew.cse21@jecc.ac.in,08-08-2024
+2,12112051,458,Evin Babu,CSE,S7,Babu's Mon,evin.cse21@jecc.ac.in,08-08-2024
+3,12112013,451,Akhil Jose,CSE,S7,Jose mega,akhil.cse21@jecc.ac.in,08-08-2024
+4,12112014,451,Alan Jose,CSE,S7,Jose maggi,alan.cse21@jecc.ac.in,08-08-2024
+5,12112003,462,Adithya E,CSE,S7,E - man,adithya.cse21@jecc.ac.in,08-08-2024
+6,12112007,462,Abin Bijoy,CSE,S7,Yoyo Bijoy,abin.cse21@jecc.ac.in,08-08-2024

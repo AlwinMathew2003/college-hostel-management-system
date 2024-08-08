@@ -24,8 +24,10 @@ export const messcutPermissionPost = async (req, res) => {
       status,
     });
     await newpermission.save();
+
     res.status(201).json(newpermission);
   } catch (err) {
+    console.log(err)
     res.status(400).json({ message: err.message });
   }
 };

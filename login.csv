@@ -1,0 +1,5 @@
+_id,adm_no,password,role,Date ,time
+1,101,pass,user,08-08-2024,10:20pm
+2,102,pass,admin,08-08-2024,10:20pm
+3,103,pass,s-admin,08-08-2024,10:20pm
+4,104,pass,m-admin,08-08-2024,10:20pm
