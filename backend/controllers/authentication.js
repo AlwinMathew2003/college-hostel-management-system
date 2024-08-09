@@ -9,7 +9,7 @@ export const signin = async (req, res) => {
     // console.log(users)
     //if admin
     const user = await User.findOne({ adm_no: req.body.admno });
-    // console.log(user)
+    console.log(user.password)
     if (user.password === req.body.password) {
       const student = await Student.findOne({ adm_no: 12112020 });
       console.log(student);
