@@ -30,12 +30,15 @@ const MessCut = () => {
             value={currentUser.adm_no}
             id="admissionNumber"
             name="admissionNumber"
-            required
+            style={{ fontWeight: "bold" }}
+            readOnly
           />
         </div>
         <div>
           <label htmlFor="roomNo">Room No:</label>
-          <input type="text" id="roomNo" name="roomNo" required />
+          <input type="text" id="roomNo" name="roomNo" value={currentUser.Room_no}
+            style={{ fontWeight: "bold" }}
+            readOnly  />
         </div>
         <div>
           <label htmlFor="name">Name:</label>
@@ -46,7 +49,6 @@ const MessCut = () => {
             value={currentUser.name}
             style={{ fontWeight: "bold" }}
             readOnly
-            required
           />
         </div>
       </form>
