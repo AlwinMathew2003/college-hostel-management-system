@@ -17,53 +17,45 @@ import AbsenteesReport from "./pages/Admin/absentees_report/Absentees_Report";
 import Login from "./pages/login/Login";
 const App = () => {
   return (
-   
-      <div>
-        <Router>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Admin" element={<AdminHome />} />
-            <Route path="/Admin/NameWiseReport" element={<NameWiseReport />} />
-            <Route
-              path="/Admin/MonthlyAttendanceReport"
-              element={<MonthlyAttendanceReport />}
-            />
-            <Route path="/Admin/DateWiseReport" element={<DateWiseReport />} />
-            <Route path="/Admin/Request_View" element={<Request_View />} />
-            <Route
-              path="/Admin/RequestBulkApproval"
-              element={<RequestBulkApproval />}
-            />
-            <Route path="/Admin/ApologyRequest" element={<ApologyRequest />} />
-            <Route
-              path="/Admin/ApologyRequestView"
-              element={<ApologyRequestView />}
-            />
-            <Route
-              path="/Admin/AttendanceReport"
-              element={<AttendanceReport />}
-            />
-            <Route
-              path="/Admin/AttendanceSheet"
-              element={<AttendanceSheet />}
-            />
-            <Route
-              path="/Admin/PresentButMessCut"
-              element={<PresentButMessCut />}
-            />
-            <Route
-              path="/Admin/AbsentButNoMesscut"
-              element={<AbsentButNoMesscut />}
-            />
-            <Route
-              path="/Admin/AbsenteesReport"
-              element={<AbsenteesReport />}
-            />
-          </Routes>
-        </Router>
-      </div>
-  
+    <div>
+      <Router>
+        <Routes>
+          <Route index path="/login" element={<Login />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Admin" element={<AdminHome />} />
+          <Route path="/Admin/NameWiseReport" element={<NameWiseReport />} />
+          <Route
+            path="/Admin/MonthlyAttendanceReport"
+            element={<MonthlyAttendanceReport />}
+          />
+          <Route path="/Admin/DateWiseReport" element={<DateWiseReport />} />
+          <Route path="/Admin/Request_View" element={<Request_View />} />
+          <Route
+            path="/Admin/RequestBulkApproval"
+            element={<RequestBulkApproval />}
+          />
+          <Route path="/Admin/ApologyRequest" element={<ApologyRequest />} />
+          <Route
+            path="/Admin/ApologyRequestView"
+            element={<ApologyRequestView />}
+          />
+          <Route
+            path="/Admin/AttendanceReport"
+            element={<AttendanceReport />}
+          />
+          <Route path="/Admin/AttendanceSheet" element={<AttendanceSheet />} />
+          <Route
+            path="/Admin/PresentButMessCut"
+            element={<PresentButMessCut />}
+          />
+          <Route
+            path="/Admin/AbsentButNoMesscut"
+            element={<AbsentButNoMesscut />}
+          />
+          <Route path="/Admin/AbsenteesReport" element={<AbsenteesReport />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 

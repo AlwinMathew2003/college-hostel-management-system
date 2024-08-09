@@ -4,9 +4,6 @@ import User from "../models/User.js";
 
 export const signin = async (req, res) => {
   try {
-    // console.log(req.body)
-    // const users = await Student.find({});
-    // console.log(users)
     //if admin
     const user = await User.findOne({ adm_no: req.body.admno });
     console.log(user.password)
