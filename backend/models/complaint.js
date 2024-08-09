@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const complaintSchema = new Schema({
@@ -23,6 +23,5 @@ const complaintSchema = new Schema({
     required: true,
   },
 });
-
 
 export default mongoose.model("Complaint", complaintSchema); // Model name 'Complaint'
