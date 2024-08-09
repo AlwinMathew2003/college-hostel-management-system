@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 const MessCut = () => {
-  // const currentUser = useSelector((state) => state.user.currentUser);
+  const currentUser = useSelector((state) => state.user.currentUser);
   
   return (
     <div className="mess-cut-main">
@@ -27,6 +27,7 @@ const MessCut = () => {
           <label htmlFor="admissionNumber">Admission NO:</label>
           <input
             type="text"
+            value={currentUser.adm_no}
             id="admissionNumber"
             name="admissionNumber"
             required
@@ -42,7 +43,7 @@ const MessCut = () => {
             type="text"
             id="name"
             name="name"
-            // value={currentUser.name}
+            value={currentUser.name}
             style={{ fontWeight: "bold" }}
             readOnly
             required
