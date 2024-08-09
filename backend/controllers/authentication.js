@@ -1,15 +1,19 @@
 import mongoose from "mongoose";
-import Student from "../models/login.js";
+import Student from "../models/students.js";
+import User from "../models/User.js";
 
 export const signin = async (req, res) => {
   try {
     // console.log(req.body)
     // const users = await Student.find({});
     // console.log(users)
-    const user = await Student.findOne({ adm_no: req.body.admno });
+    //if admin
+    const user = await User.findOne({ adm_no: req.body.admno });
     // console.log(user)
     if (user.password === req.body.password) {
-      res.json(user);
+      const student = await Student.findOne({ adm_no: 12112020 });
+      console.log(student);
+      res.json(student);
     } else {
       res.json({ message: "wrong creds" });
     }

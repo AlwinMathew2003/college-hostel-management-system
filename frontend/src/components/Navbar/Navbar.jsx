@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
 
+  ///For logout
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   const toggleDropdown = (e) => {
     e.preventDefault();
     setIsDropdownOpen(!isDropdownOpen);
@@ -39,7 +44,9 @@ const Navbar = () => {
           </div>
         </div>
         <a href="#">Messages</a>
-        <a href="#">Logout</a>
+        <a href="#">
+          <button onClick={handleLogout}>Logout</button>
+        </a>
       </div>
     </div>
   );
