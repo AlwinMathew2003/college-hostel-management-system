@@ -3,10 +3,12 @@ import { useState } from "react";
 import axios from "axios";
 import "./ComplaintForm.css";
 import {motion} from 'framer-motion'
+import { useSelector } from "react-redux";
 
 const ComplaintForm = () => {
   // Open the stylesheet: file://./ComplaintForm.css
   const [complain, setComplain] = useState("");
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

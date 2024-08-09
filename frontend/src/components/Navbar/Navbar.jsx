@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
         </div>
         <a href="#">Messages</a>
-        <a href="#">
+        <a href="http://localhost:5173/login">
           <button onClick={handleLogout}>Logout</button>
         </a>
       </div>
