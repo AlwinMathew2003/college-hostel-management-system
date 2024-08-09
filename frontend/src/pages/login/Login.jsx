@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginStart, loginSucces } from "../../redux/userSlice";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [admno, setAdmno] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   ///For logout
   const handleLogout = () => {
     dispatch(logout());
@@ -24,6 +24,7 @@ const Login = () => {
       });
       console.log(res.data);
       dispatch(loginSucces(res.data));
+      navigate("/home");
     } catch (err) {
       dispatch(loginFailure());
     }
