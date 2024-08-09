@@ -36,9 +36,10 @@ const MessCut = () => {
         </div>
         <div>
           <label htmlFor="roomNo">Room No:</label>
-          <input type="text" id="roomNo" name="roomNo" value={currentUser.Room_no}
-            style={{ fontWeight: "bold" }}
-            readOnly  />
+          <input type="text" id="roomNo" name="roomNo"
+                      value={currentUser.Room_no}
+                      style={{ fontWeight: "bold" }}
+                      readOnly/>
         </div>
         <div>
           <label htmlFor="name">Name:</label>

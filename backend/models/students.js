@@ -7,11 +7,11 @@ const studentSchema = new Schema({
     required: true,
   },
   adm_no: {
-    type: Number,
+    type: String,
     required: true,
   },
   Room_no: {
-    type: Number,
+    type: String,
     required: true,
   },
   name: {

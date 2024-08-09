@@ -7,7 +7,7 @@ const loginSchema = new Schema({
     required: true,
   },
   adm_no: {
-    type: Number,
+    type: String,
     required: true,
   },
   password: {
