@@ -5,7 +5,7 @@
     align-items: center;
     padding: 20px;
     /* background: linear-gradient(45deg, #add8e6, #ffffff);  */
-    background: linear-gradient(to right, #e6f7ff, #cce0ff);
+    background: linear-gradient(to right, #ffffff, #ffffff);
 }
 
 @media (max-width: 768px) {

@@ -10,16 +10,16 @@ body {
     position: fixed; /* Fixed position to stay at the top */
     top: 0;
     left: 0;
-    background: #003366; /* Dark blue background */
-    color: #ffffff; /* White text */
-    padding: 0.5rem 1rem;
+    background: #ffffff; /* Dark blue background */
+    color: #003366; /* White text */
+    padding: 0rem 1rem;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem; /* Slightly larger font size */
+    font-size: 2.5rem; /* Slightly larger font size */
     font-weight: 700; /* Bold text */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 10px 13px rgba(0, 0, 0, 0.067);  /*Subtle shadow */
     z-index: 1000; /* Ensures it stays on top of other elements */
-    height: 90px;
+    height: 80px;
     line-height: 80px; /* Vertically center the text */
 }
 
@@ -29,22 +29,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #e6f7ff, #cce0ff); /* Light blue gradient background */
+    background: linear-gradient(to right, #ffffff, #ffffff); /* Light blue gradient background */
     padding: 0 20px;
-    margin-top: 50px; /* Space for top bar */
+    margin-top: 5px; /* Space for top bar */
 }
 
 .login-main {
     background: #ffffff; /* Clean white background */
     border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 8px 15px 30px rgba(7, 93, 242, 0.541); /* Soft shadow */
     padding: 2rem;
     margin: 2rem auto;
     max-width: 400px;
     width: 100%;
     transform: translateY(-20px);
     animation: fadeInUp 0.6s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center; /* Ensure scaling is centered */
 }
+
 
 @keyframes fadeInUp {
     from {

@@ -14,7 +14,7 @@ const Home = () => {
     <div className="home-container">
      
         <MessCut />
-      
+        
         <MessCutPermissionForm />
    
         <FeeDetails />
