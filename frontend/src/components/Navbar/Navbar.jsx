@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../redux/userSlice";
 
 const Navbar = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   ///For logout
   const handleLogout = () => {
     dispatch(logout());
+    navigate("/login"); 
   };
   const toggleDropdown = (e) => {
     e.preventDefault();

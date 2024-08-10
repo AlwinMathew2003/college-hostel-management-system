@@ -6,18 +6,21 @@ import {motion} from 'framer-motion'
 import { useSelector } from "react-redux";
 
 const ComplaintForm = () => {
+
+  const currentUser = useSelector((state) => state.user.currentUser);  
+
   // Open the stylesheet: file://./ComplaintForm.css
   const [complain, setComplain] = useState("");
-  const currentUser = useSelector((state) => state.user.currentUser);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const complaint = {
       _id: new Date().toISOString(),
-      adm_no: 12112014, // Test value
-      Room_no: 456, // Test value
+      adm_no: currentUser.adm_no,
+      Room_no: currentUser.Room_no, 
       message: complain,
-      status: false, // Test value
+      status: false,
     };
 
     try {

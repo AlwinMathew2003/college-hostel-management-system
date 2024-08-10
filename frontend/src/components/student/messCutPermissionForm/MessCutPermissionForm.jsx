@@ -31,8 +31,8 @@ const MessCutPermissionForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const complaintData = {
-      _id: Math.random(),  // Note: Replace this with a unique ID generation logic
+    const complaintData = { 
+      _id: new Date().toISOString(),  // Note: Replace this with a unique ID generation logic
       adm_no: currentUser.adm_no,
       status: false,
       ...formData
