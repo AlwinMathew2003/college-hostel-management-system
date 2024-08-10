@@ -3,13 +3,16 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginStart, loginSucces } from "../../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
+
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [admno, setAdmno] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  ///For logout
+  
+  // For logout
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -29,31 +32,32 @@ const Login = () => {
       dispatch(loginFailure());
     }
   };
+
   return (
-    <div className="min-h-screen mt-20">
-      <div className="main">
-        <form className="max-w-sm mx-auto">
-          <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Enter you admission number
+    <div className="login-container">
+      <div className="login-main">
+        <h1 className="login-heading">Login</h1>
+        <form className="login-form">
+          <div className="login-field">
+            <label className="login-label">
+              Enter your admission number
             </label>
             <input
               type="text"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="101"
+              className="login-input"
               required
               onChange={(e) => setAdmno(e.target.value)}
             />
           </div>
-          <div className="mb-5">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <div className="login-field">
+            <label className="login-label">
               Enter your password
             </label>
             <input
               type="password"
               id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="login-input"
               required
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -61,7 +65,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="login-button"
             onClick={handleLogin}
           >
             Log in
