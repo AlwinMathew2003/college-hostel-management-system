@@ -17,7 +17,7 @@ const app = express();
 
 app.use(json());
 app.use(cors());
-app.use("/api/login", authUser);
+
 set("debug", true);
 connect(process.env.MONGO)
   .then(() => {
@@ -26,9 +26,13 @@ connect(process.env.MONGO)
   .catch((err) => {
     console.log(err);
   });
+
+app.use("/api/login", authUser);
+app.use("/api/complaints",complaintRoutes )
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/messcutpermissions",messcutpermissionRoutes);
 app.use("/api/apologies",apologyRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
