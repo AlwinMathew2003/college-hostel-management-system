@@ -1,20 +1,43 @@
-/* Login Page Styles */
+/* Reset margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-bar {
+    width: 100%;
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0;
+    left: 0;
+    background: #003366; /* Dark blue background */
+    color: #ffffff; /* White text */
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem; /* Slightly larger font size */
+    font-weight: 700; /* Bold text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    height: 90px;
+    line-height: 80px; /* Vertically center the text */
+}
+
 .login-container {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #9abef5, #abbad0);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(to right, #e6f7ff, #cce0ff); /* Light blue gradient background */
     padding: 0 20px;
+    margin-top: 50px; /* Space for top bar */
 }
 
 .login-main {
-    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    background: #ffffff; /* Clean white background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
     padding: 2rem;
     margin: 2rem auto;
     max-width: 400px;
@@ -39,10 +62,10 @@
     margin-bottom: 1.5rem;
     font-size: 2rem; /* Larger font size */
     font-weight: 700; /* Bold text */
-    color: #333;
+    color: #003366; /* Dark blue for headings */
     text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 1.5px; /* Slightly spaced letters for a modern touch */
-    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
     animation: slideIn 0.5s ease-out;
 }
 
@@ -68,38 +91,56 @@
 
 .login-label {
     font-size: 0.9rem; /* Slightly larger font size */
-    color: #444; /* Darker gray for better readability */
+    color: #003366; /* Dark blue for better readability */
     margin-bottom: 0.5rem;
     font-weight: 600; /* Semi-bold for emphasis */
     text-transform: capitalize; /* Capitalize the first letter of each word */
-    font-family: 'Arial', sans-serif; /* Clean, classic font */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
 }
 
 .login-input {
-    border: 2px solid #ccc; /* Light gray border with increased thickness */
+    border: 2px solid #b3cde0; /* Light blue border */
     border-radius: 0.5rem; /* Rounded corners */
     padding: 0.75rem;
     font-size: 1rem; /* Larger font size for better readability */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    background: #ffffff; /* White background for the input */
-    color: #333; /* Dark text color */
-    font-family: 'Arial', sans-serif; /* Clean, classic font */
+    background: #f9f9f9; /* Light background for the input */
+    color: #003366; /* Dark text color */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    position: relative;
 }
 
 .login-input::placeholder {
-    color: #aaa; /* Light gray placeholder text */
+    color: #a3b1c6; /* Light gray-blue placeholder text */
     font-style: italic; /* Italicize placeholder text */
 }
 
+/* Attractive border with gradient and shadow */
 .login-input:focus {
-    border-color: #007bff; /* Vibrant blue on focus */
+    border-color: #003366; /* Dark blue on focus */
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Subtle blue shadow */
+    box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.25), inset 0 0 5px rgba(0, 51, 102, 0.1); /* Subtle dark blue shadow and inset glow */
+}
+
+/* Gradient border for a modern effect */
+.login-input:focus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #003366, #b3cde0) border-box; /* Gradient border effect */
+    z-index: 1;
+    pointer-events: none;
 }
 
 .login-button {
-    background-color: #007bff; /* Vibrant blue button */
+    background-color: #003366; /* Dark blue button */
     color: #ffffff;
     border: none;
     border-radius: 0.5rem; /* Rounded corners */
@@ -110,21 +151,24 @@
     width: 100%;
     font-weight: 700; /* Bold text */
     text-transform: uppercase; /* Uppercase text for button */
-    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
 }
 
 .login-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #002244; /* Darker blue on hover */
     transform: scale(1.05);
 }
 
 .login-button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.35); /* Enhanced focus shadow */
+    box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.35); /* Enhanced focus shadow */
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .login-container {
+        margin-top: 10px !important; /* Reduced space for top bar */
+    }
     .login-main {
         margin: 1rem;
         padding: 1.5rem;
@@ -136,6 +180,9 @@
 }
 
 @media (max-width: 480px) {
+    .login-container {
+        margin-top: 50px; /* Further reduced space for top bar */
+    }
     .login-main {
         margin: 0.5rem;
         padding: 1rem;

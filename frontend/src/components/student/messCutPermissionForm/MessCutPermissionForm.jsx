@@ -77,15 +77,8 @@ const MessCutPermissionForm = () => {
         className="form-subheading"
       >
         ( Permission requested here is just for mess cut only.
-        <b> Permission to leave and enter hostel should be sought separately via proper channel </b> )
-      </motion.p>
-      <motion.p 
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1 }}
-        className="form-enquiry"
-      >
-        For further enquiry: 9446047155
+        <b> Permission to leave and enter hostel should be sought separately via proper channel </b> ) <br /> <br />
+        <strong>For further enquiry: 9446047155</strong> <br /> <br />
       </motion.p>
       <form onSubmit={handleSubmit}>
         <div>
