@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Admin_Navbar from '../../../components/admin_navbar/Admin_Navbar';
 import './Request_Bulk_Approval.css';
+import axios from 'axios';
 
 const RequestBulkApproval = () => {
     const [fromDate, setFromDate] = useState('');
@@ -9,25 +10,28 @@ const RequestBulkApproval = () => {
     const [toTime, setToTime] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     const [entries, setEntries] = useState(10);
+    const [data, setData] = useState([]);
 
-    // Dummy data for the table
-    const data = [
-        {
-            id: 1, name: 'John Doe', leavingDate: '2024-07-20', leavingTime: '14:00:00',
-            returningDate: '2024-07-22', returningTime: '10:00:00', status: 'Pending'
-        },
-        {
-            id: 2, name: 'Jane Smith', leavingDate: '2024-07-21', leavingTime: '15:00:00',
-            returningDate: '2024-07-23', returningTime: '11:00:00', status: 'Approved'
-        },
-        // Add more data as needed
-    ];
+    useEffect(() => {
+        axios.get("http://localhost:5000/api/messcutpermissions/messcutpermission/approval")
+            .then((result) => {
+                setData(result.data); // Update state with the data from the API
+            })
+            .catch((e) => console.error(e));
+    }, []);
 
-    const filteredData = data.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        new Date(item.leavingDate) >= new Date(fromDate) &&
-        new Date(item.returningDate) <= new Date(toDate)
-    ).slice(0, entries);
+    // Filter the data
+    const filteredData = data.filter(item => {
+        const name = item.studentName || ''; // Correct property name
+        const leavingDate = item.leavingDate ? new Date(item.leavingDate) : new Date();
+        const returningDate = item.returningDate ? new Date(item.returningDate) : new Date();
+
+        const nameMatch = name.toLowerCase().includes(searchTerm.toLowerCase());
+        const leavingDateMatch = fromDate ? leavingDate >= new Date(fromDate) : true;
+        const returningDateMatch = toDate ? returningDate <= new Date(toDate) : true;
+
+        return nameMatch && leavingDateMatch && returningDateMatch;
+    }).slice(0, entries);
 
     const handleBulkApproval = () => {
         // Add logic to handle bulk approval
@@ -37,7 +41,6 @@ const RequestBulkApproval = () => {
     return (
         <div>
             <Admin_Navbar />
-
             <div className="request-bulk-approval-container">
                 <div className="request-bulk-approval-content">
                     <h1 className="request-bulk-approval-heading">Request Bulk Approval</h1>
@@ -135,13 +138,13 @@ const RequestBulkApproval = () => {
                         <tbody>
                             {filteredData.length > 0 ? (
                                 filteredData.map(item => (
-                                    <tr key={item.id}>
-                                        <td>{item.name}</td>
-                                        <td>{item.leavingDate}</td>
-                                        <td>{item.leavingTime}</td>
-                                        <td>{item.returningDate}</td>
-                                        <td>{item.returningTime}</td>
-                                        <td>{item.status}</td>
+                                    <tr key={item._id}>
+                                        <td>{item.studentName || 'N/A'}</td> {/* Correct property name */}
+                                        <td>{item.leavingDate ? new Date(item.leavingDate).toLocaleDateString() : 'N/A'}</td>
+                                        <td>{item.leavingTime || 'N/A'}</td>
+                                        <td>{item.returningDate ? new Date(item.returningDate).toLocaleDateString() : 'N/A'}</td>
+                                        <td>{item.returningTime || 'N/A'}</td>
+                                        <td>{item.status ? 'Approved' : 'Pending'}</td>
                                     </tr>
                                 ))
                             ) : (
