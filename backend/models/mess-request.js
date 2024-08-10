@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const messRequestSchema = new Schema({
   _id: {
-    type: Number,
+    type: String,
     required: true,
   },
   adm_no: {

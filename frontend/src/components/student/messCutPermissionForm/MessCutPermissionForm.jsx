@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./MessCutPermissionForm.css";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const MessCutPermissionForm = () => {
+
+  const currentUser = useSelector((state) => state.user.currentUser);
+
   const [formData, setFormData] = useState({
     leavingDate: "",
     leavingTime: "",
@@ -24,8 +28,8 @@ const MessCutPermissionForm = () => {
     e.preventDefault();
 
     const complaintData = {
-      _id: 12112013,  // Note: Replace this with a unique ID generation logic
-      adm_no: 12112014,
+      _id: new Date().toISOString(),  // Note: Replace this with a unique ID generation logic
+      adm_no: currentUser.adm_no,
       status: false,
       ...formData
     };
