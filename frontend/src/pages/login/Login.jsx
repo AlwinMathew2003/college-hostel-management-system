@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import './Login.css';
 
 const Login = () => {
-  const [isLogin, setIsLogin] = useState(true);
   const [admno, setAdmno] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -20,7 +19,6 @@ const Login = () => {
         admno,
         password,
       });
-      console.log(res.data);
       dispatch(loginSucces(res.data));
       navigate("/home");
     } catch (err) {
@@ -34,11 +32,10 @@ const Login = () => {
       <div className="login-container">
         {/* <h1 className="login-heading">Login</h1> */}
         <div className="login-main">
-          <h1 className="login-heading">Login</h1>
           <form className="login-form">
             <div className="login-field">
               <label className="login-label">
-                Enter your admission number
+                Admission number
               </label>
               <input
                 type="text"
@@ -50,7 +47,7 @@ const Login = () => {
             </div>
             <div className="login-field">
               <label className="login-label">
-                Enter your password
+                Password
               </label>
               <input
                 type="password"
