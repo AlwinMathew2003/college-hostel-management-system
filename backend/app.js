@@ -7,6 +7,7 @@ import authUser from "./routes/authentication.js";
 import complaintRoutes from "./routes/student/complaintRoutes.js";
 import messcutpermissionRoutes from "./routes/student/messcutpermissionRoutes.js";
 import apologyRoutes from "./routes/admin/apologyRoutes.js"
+import passwordRoutes from "./routes/student/updatePassword.js"
 
 config();
 
@@ -32,6 +33,7 @@ app.use("/api/complaints",complaintRoutes )
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/messcutpermissions",messcutpermissionRoutes);
 app.use("/api/apologies",apologyRoutes);
+app.use("/api/user",passwordRoutes);
 
 
 app.listen(PORT, () => {

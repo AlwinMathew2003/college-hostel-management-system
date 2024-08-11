@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../redux/userSlice";
 
-const Navbar = () => {
+const Navbar = ({openModal}) => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dispatch = useDispatch();
@@ -43,8 +43,8 @@ const Navbar = () => {
             {!currentUser ? "Student" : currentUser.name}
           </a>
           <div className="dropdown-menu">
-            <a href="#">Profile</a>
-            <a href="#">change Password</a>
+            <a href="#" style={{fontSize:"1.1rem",textAlign:"center"}} >Profile</a>
+            <a  style={{fontSize:"1.1rem"}}><button onClick={openModal} className="openModalBtn">Change password</button></a>
           </div>
         </div>
         <a href="#">Messages</a>
