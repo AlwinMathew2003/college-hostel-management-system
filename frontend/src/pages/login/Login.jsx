@@ -30,7 +30,7 @@ const Login = () => {
     <div>
       <div className="top-bar">Santhome JEC</div>
       <div className="login-container">
-        <h1 className="login-heading">Login</h1>
+        {/* <h1 className="login-heading">Login</h1> */}
         <div className="login-main">
           <form className="login-form">
             <div className="login-field">
