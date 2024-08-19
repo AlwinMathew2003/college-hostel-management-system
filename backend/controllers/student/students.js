@@ -1,6 +1,6 @@
 import Student from "../../models/students.js";
 import mongoose from "mongoose";
-
+import messRequest from "../../models/mess-request.js";
 //add a student
 export const addStudent = async (req, res) => {
   const newStudent = new Student({ ...req.body });
@@ -14,17 +14,25 @@ export const addStudent = async (req, res) => {
 
 export const getAllPerm = async (req, res) => {
   try {
-    const stduent = Student.findById(req.id);
-    const allpersid = stduent.messRequests;
+    const student = await Student.findOne({ adm_no: req.params.adm_no });
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+
+    const allpersid = student.messRequests;
+
     const allPerms = await Promise.all(
-      allpersid.map((permid) => {
-        return User.findById(permid);
+      allpersid.map(async (permid) => {
+        return await messRequest.findById(permid);
       })
     );
+
     res.json(allPerms);
   } catch (err) {
-    res.json(err);
-    console.log("tried");
+    console.error("Error fetching permissions:", err); // Improved logging
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching permissions" });
   }
 };
 

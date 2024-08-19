@@ -7,7 +7,7 @@ const router = Express.Router();
 router.post("/add", addStudent);
 
 //get all mess permission request for a student
-router.get("/getallperm", getAllPerm);
+router.get("/getallperm/:adm_no", getAllPerm);
 //delete a user
 // router.post("/delete", );
 

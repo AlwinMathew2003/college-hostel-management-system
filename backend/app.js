@@ -30,7 +30,7 @@ app.use("/api/complaints", complaintRoutes);
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/messcutpermissions", messcutpermissionRoutes);
 app.use("/api/apologies", apologyRoutes);
-app.use("api/students", studentRoutes);
+app.use("/api/students", studentRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
