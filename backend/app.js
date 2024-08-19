@@ -6,11 +6,9 @@ import { set, connect } from "mongoose";
 import authUser from "./routes/authentication.js";
 import complaintRoutes from "./routes/student/complaintRoutes.js";
 import messcutpermissionRoutes from "./routes/student/messcutpermissionRoutes.js";
-import apologyRoutes from "./routes/admin/apologyRoutes.js"
-
+import apologyRoutes from "./routes/admin/apologyRoutes.js";
+import studentRoutes from "./routes/student/students.js";
 config();
-
-
 
 const PORT = process.env.PORT;
 const app = express();
@@ -28,11 +26,11 @@ connect(process.env.MONGO)
   });
 
 app.use("/api/login", authUser);
-app.use("/api/complaints",complaintRoutes )
 app.use("/api/complaints", complaintRoutes);
-app.use("/api/messcutpermissions",messcutpermissionRoutes);
-app.use("/api/apologies",apologyRoutes);
-
+app.use("/api/complaints", complaintRoutes);
+app.use("/api/messcutpermissions", messcutpermissionRoutes);
+app.use("/api/apologies", apologyRoutes);
+app.use("api/students", studentRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);

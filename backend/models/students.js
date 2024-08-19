@@ -38,6 +38,9 @@ const studentSchema = new Schema({
     type: Date,
     required: true,
   },
+  messRequests: {
+    type: [String],
+  },
 });
 
-export default mongoose.model("Student", studentSchema,"Student");
+export default mongoose.model("Student", studentSchema, "Student");

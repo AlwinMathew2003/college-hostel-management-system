@@ -1,11 +1,13 @@
 import Express from "express";
-import { addStudent } from "../../controllers/student/students.js";
+import { addStudent, getAllPerm } from "../../controllers/student/students.js";
 
 const router = Express.Router();
 
 //add a user
 router.post("/add", addStudent);
 
+//get all mess permission request for a student
+router.get("/getallperm", getAllPerm);
 //delete a user
 // router.post("/delete", );
 

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import messcutpermissionModel from "../../models/mess-request.js";
-import Student from '../../models/students.js'
+import Student from "../../models/students.js";
 
 export const messcutPermissionPost = async (req, res) => {
   try {
@@ -25,10 +25,18 @@ export const messcutPermissionPost = async (req, res) => {
       status,
     });
     await newpermission.save();
+    const updatedStudent = await Student.findOneAndUpdate(
+      { adm_no: adm_no },
+      {
+        $push: { messRequests: _id },
+      },
+      { new: true }
+    );
+    await Student.findByIdAndUpdate();
 
-    res.status(201).json(newpermission);
+    res.status(201).json({ newpermission, updatedStudent });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json({ message: err.message });
   }
 };
@@ -42,15 +50,17 @@ export const messcutPermissionGet = async (req, res) => {
     const students = await Student.find();
 
     // Create a map of adm_no to student name
-    const studentMap = new Map(students.map(student => [student.adm_no.toString(), student.name])); // Ensure adm_no is a string
+    const studentMap = new Map(
+      students.map((student) => [student.adm_no.toString(), student.name])
+    ); // Ensure adm_no is a string
 
     // Log studentMap for debugging
     // console.log("Student Map:", Array.from(studentMap.entries()));
 
     // Enrich permissions data with student names
-    const enrichedPermissions = permissions.map(permission => ({
+    const enrichedPermissions = permissions.map((permission) => ({
       ...permission.toObject(), // Convert MongoDB document to plain object
-      studentName: studentMap.get(permission.adm_no.toString()) || 'Unknown' // Add student name
+      studentName: studentMap.get(permission.adm_no.toString()) || "Unknown", // Add student name
     }));
 
     // console.log("Enriched Permissions:", enrichedPermissions); // Log the enriched data
