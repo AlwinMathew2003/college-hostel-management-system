@@ -14,6 +14,7 @@ import AttendanceSheet from "./pages/Admin/attendence_sheet/Attendence_Sheet";
 import PresentButMessCut from "./pages/Admin/present_but_mess_cut/Present_But_Mess_Cut";
 import AbsentButNoMesscut from "./pages/Admin/absent_but_no_mess_cutt/Absent_But_No_Mess_Cut";
 import AbsenteesReport from "./pages/Admin/absentees_report/Absentees_Report";
+import TempStudentsReq from "./pages/temp_students_req";
 import Login from "./pages/login/Login";
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
             element={<AbsentButNoMesscut />}
           />
           <Route path="/Admin/AbsenteesReport" element={<AbsenteesReport />} />
+          <Route path="/allperms" element={<TempStudentsReq />} />
         </Routes>
       </Router>
     </div>
