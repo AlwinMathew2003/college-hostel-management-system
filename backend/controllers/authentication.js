@@ -1,15 +1,26 @@
-import mongoose from "mongoose";
-import Student from "../models/students.js";
-import User from "../models/User.js";
+// import mongoose from "mongoose";
+// import Student from "../models/students.js";
+// import User from "../models/User.js";
 
 export const signin = async (req, res) => {
   try {
     //if admin
-    const user = await User.findOne({ adm_no: req.body.admno });
+    // const user = await User.findOne({ adm_no: req.body.admno });
+    console.log(req.body);
 
+    const user = {
+      password: "pass",
+      admno : "user"
+    }
+      
     if (user.password === req.body.password) {
 
-      const student = await Student.findOne({ adm_no: req.body.admno });
+      // const student = await Student.findOne({ adm_no: req.body.admno });
+      const student = {
+         password: "pass",
+      admno : "user"
+        
+      }
       console.log(student);
       res.json(student);
     } else {
@@ -20,12 +31,12 @@ export const signin = async (req, res) => {
   }
 };
 
-export const signup = async (req, res, next) => {
-  try {
-    const newUser = new Student(req.body);
-    await newUser.save();
-    res.status(200).send("User has been created");
-  } catch (err) {
-    next(err);
-  }
-};
+// export const signup = async (req, res, next) => {
+//   try {
+//     // const newUser = new Student(req.body);
+//     // await newUser.save();
+//     res.status(200).send("User has been created");
+//   } catch (err) {
+//     next(err);
+//   }
+// };

@@ -8,7 +8,7 @@ import complaintRoutes from "./routes/student/complaintRoutes.js";
 import messcutpermissionRoutes from "./routes/student/messcutpermissionRoutes.js";
 import apologyRoutes from "./routes/admin/apologyRoutes.js"
 import passwordRoutes from "./routes/student/updatePassword.js"
-import mysql from "mysql2";
+import db from "./mysql.js";
 
 
 config();
@@ -30,23 +30,6 @@ app.use(cors());
 // //     console.log(err);
 // //   });
 
-// Create a connection pool
-const db  = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'hostel'
-});
-
-// Test the connection
-db.getConnection((err, connection) => {
-  if (err) {
-    console.error('Error connecting to MySQL:', err);
-    return;
-  }
-  console.log('Connected to MySQL!');
-  connection.release(); // Release the connection back to the pool
-});
 
 
 app.use("/api/login", authUser);
