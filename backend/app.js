@@ -33,7 +33,7 @@ app.use(cors());
 
 
 app.use("/api/login", authUser);
-app.use("/api/complaints",complaintRoutes )
+
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/messcutpermissions",messcutpermissionRoutes);
 app.use("/api/apologies",apologyRoutes);

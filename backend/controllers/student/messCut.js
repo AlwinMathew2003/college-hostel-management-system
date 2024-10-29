@@ -1,11 +1,9 @@
-import mongoose from "mongoose";
-import messcutpermissionModel from "../../models/mess-request.js";
-import Student from '../../models/students.js'
+// Import the database connection (assumes you've set it up as shown in `db.js`)
+import db from "../../mysql.js"; // Update the path if necessary
 
 export const messcutPermissionPost = async (req, res) => {
   try {
     const {
-      _id,
       adm_no,
       leavingDate,
       leavingTime,
@@ -14,8 +12,16 @@ export const messcutPermissionPost = async (req, res) => {
       returningTime,
       status,
     } = req.body;
-    const newpermission = new messcutpermissionModel({
-      _id,
+
+    // Insert the permission request into MySQL
+    const [result] = await db.query(
+      "INSERT INTO mess_request (admno, leaving_date, leaving_time, reason, returning_date, returning_time, status) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [adm_no, leavingDate, leavingTime, reason, returningDate, returningTime, status]
+    );
+
+    // Create a response object with the inserted permission data
+    const newPermission = {
+      id: result.insertId,
       adm_no,
       leavingDate,
       leavingTime,
@@ -23,39 +29,36 @@ export const messcutPermissionPost = async (req, res) => {
       returningDate,
       returningTime,
       status,
-    });
-    await newpermission.save();
+    };
 
-    res.status(201).json(newpermission);
+    res.status(201).json(newPermission);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json({ message: err.message });
   }
 };
 
 export const messcutPermissionGet = async (req, res) => {
   try {
-    // Fetch all permissions
-    const permissions = await messcutpermissionModel.find();
+    // Fetch all permissions with associated student names by joining on adm_no
+    const [permissions] = await db.query(`
+      SELECT
+        m.id,
+        m.adm_no,
+        m.leaving_date,
+        m.leaving_time,
+        m.reason,
+        m.returning_date,
+        m.returning_time,
+        m.status,
+        s.name AS studentName
+      FROM
+        mess_request m
+      LEFT JOIN
+        students s ON m.adm_no = s.adm_no
+    `);
 
-    // Fetch all students
-    const students = await Student.find();
-
-    // Create a map of adm_no to student name
-    const studentMap = new Map(students.map(student => [student.adm_no.toString(), student.name])); // Ensure adm_no is a string
-
-    // Log studentMap for debugging
-    // console.log("Student Map:", Array.from(studentMap.entries()));
-
-    // Enrich permissions data with student names
-    const enrichedPermissions = permissions.map(permission => ({
-      ...permission.toObject(), // Convert MongoDB document to plain object
-      studentName: studentMap.get(permission.adm_no.toString()) || 'Unknown' // Add student name
-    }));
-
-    // console.log("Enriched Permissions:", enrichedPermissions); // Log the enriched data
-
-    res.status(200).json(enrichedPermissions);
+    res.status(200).json(permissions);
   } catch (err) {
     console.log(err);
     res.status(400).json({ message: err.message });

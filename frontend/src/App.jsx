@@ -20,7 +20,7 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route index path="/login" element={<Login />} />
+          <Route index path="/" element={<Login />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Admin" element={<AdminHome />} />
           <Route path="/Admin/NameWiseReport" element={<NameWiseReport />} />

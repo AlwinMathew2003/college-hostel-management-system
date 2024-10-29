@@ -18,7 +18,6 @@ const ComplaintForm = () => {
     const complaint = {
       _id: new Date().toISOString(),
       adm_no: currentUser.adm_no,
-      Room_no: currentUser.Room_no, 
       message: complain,
       status: false,
     };

@@ -5,7 +5,11 @@ import { useSelector } from "react-redux";
 
 const MessCut = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
-  
+  // const currentUser = {
+  //   adm_no: "1234",
+  //   Room_no: "123",
+  //   name: "User"
+  // }
   return (
     <div className="mess-cut-main">
       <motion.h1

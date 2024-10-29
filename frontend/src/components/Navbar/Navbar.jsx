@@ -13,7 +13,7 @@ const Navbar = ({openModal}) => {
   ///For logout
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/login"); 
+    navigate(""); 
   };
   const toggleDropdown = (e) => {
     e.preventDefault();

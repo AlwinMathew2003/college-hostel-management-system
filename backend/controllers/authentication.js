@@ -17,7 +17,31 @@ export const signin = async (req, res) => {
       // Check if the password matches
       if (user.password === req.body.password) {
         console.log("User authenticated:", user);
-        res.json({ id: user.id, admno: user.username, date: user.date }); // Send user info without password
+        const [studentResults] = await db.execute(
+          'SELECT * FROM student WHERE admno = ?',
+          [user.username]
+        );
+
+        if (studentResults.length === 0) {
+          return res.status(404).json({ error: 'Student details not found' });
+        }
+    
+        const student = studentResults[0];
+        const modifiedStudentData = {
+          adm_no: student.admno,   // Renamed from `admno` to `studentId`
+          name: student.name,         // Keeping `name` the same
+          Room_no: student.room_no, // Renamed from `room_no` to `roomNumber`
+          department: student.department,
+          sem: student.sem,
+          phone_no: student.phone_no,
+          guardian_name: student.guardian_name,
+          guardian_no: student.guardian_no,
+          jecc_mail: student.jecc_mail.trim() // Trim any trailing newline characters
+        };
+        
+        console.log(student);
+        console.log(modifiedStudentData)
+        res.json(modifiedStudentData); // Send user info without password
       } else {
         res.status(401).json({ message: "Incorrect password" }); // Unauthorized
       }
@@ -45,3 +69,4 @@ export const fetchUsers = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
