@@ -1,5 +1,5 @@
 import Express from "express";
-import { signin } from "../controllers/authentication.js";
+import { signin,fetchUsers } from "../controllers/authentication.js";
 const router = Express.Router();
 
 //sigin

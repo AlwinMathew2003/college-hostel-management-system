@@ -1,4 +1,4 @@
-import mysql from "mysql2";
+import mysql from "mysql2/promise.js";
 
 // Create a connection pool
 const db  = mysql.createPool({
