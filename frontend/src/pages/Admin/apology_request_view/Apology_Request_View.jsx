@@ -13,9 +13,11 @@ const ApologyRequestView = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/api/apologies/apologyview');
+                console.log(response.data)
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
+                alert('Failed to load data. Please try again later.');
             }
         };
 
@@ -24,7 +26,7 @@ const ApologyRequestView = () => {
 
     const filteredData = data.filter(item =>
         item.Stud_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.Adm_no.toLowerCase().includes(searchTerm.toLowerCase())
+        item.Adm_no.toString().toLowerCase().includes(searchTerm.toLowerCase())
     ).slice(0, entries);
 
     return (
@@ -47,7 +49,6 @@ const ApologyRequestView = () => {
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="30">30</option>
-                                {/* Add more options as needed */}
                             </select>
                             <span style={{ marginLeft: "10px" }}>entries</span>
                         </div>
@@ -55,7 +56,7 @@ const ApologyRequestView = () => {
                             <label style={{ marginRight: "10px" }}>Search:</label>
                             <input
                                 type="text"
-                                placeholder="Search..."
+                                placeholder="Search by name or admission number..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="apology-request-search-input"
@@ -82,17 +83,24 @@ const ApologyRequestView = () => {
                             {filteredData.length > 0 ? (
                                 filteredData.map(item => (
                                     <tr key={item._id}>
-                                        <td>{item._id}</td>
-                                        <td>{item.Adm_no}</td>
+                                        <td>{item.id}</td>
+                                        <td>{item.admno}</td>
                                         <td>{item.semester}</td>
                                         <td>{item.className}</td>
                                         <td>{item.Room_no}</td>
                                         <td>{item.Stud_name}</td>
-                                        <td>{item.Reason}</td>
-                                        <td>{item.Apology_no}</td>
-                                        <td>{new Date(item.date).toLocaleDateString()}</td>
+                                        <td>{item.reason}</td>
+                                        <td>{item.apology_no}</td>
+                                        <td>{new Intl.DateTimeFormat('en-US').format(new Date(item.date))}</td>
                                         <td>{item.Status ? 'Approved' : 'Pending'}</td>
-                                        <td><button className="apology-request-action-button">Action</button></td>
+                                        <td>
+                                            <button 
+                                                className="apology-request-action-button" 
+                                                onClick={() => alert(`Action for ${item.Stud_name}`)}
+                                            >
+                                                Action
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))
                             ) : (

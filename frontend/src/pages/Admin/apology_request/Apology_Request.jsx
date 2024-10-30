@@ -60,9 +60,7 @@ const ApologyRequest = () => {
         e.preventDefault();
 
         const requestData = {
-            _id: Adm_no_,
-            Room_no,
-            Stud_name,
+            _id: Math.random().toString(36).substr(2, 9),
             Reason,
             date: new Date(),
             Apology_no: 1,
