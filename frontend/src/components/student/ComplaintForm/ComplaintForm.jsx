@@ -35,11 +35,19 @@ const ComplaintForm = () => {
 
   return (
     <div className="complaint-form-container">
-      <motion.h1 className="complaint-form-heading"
-      initial={{ scale: 0.8, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{ fontSize: "50px", color: "#333", fontFamily: "cursive", textShadow: "2px 2px 2px #ccc" }}>Complaint Form</motion.h1>
+      <motion.h1
+  className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-800 mb-6"
+  initial={{ scale: 0.8, opacity: 0 }}
+  whileInView={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.5 }}
+  style={{
+    fontFamily: "cursive",
+    textShadow: "2px 2px 2px #ccc",
+    overflowWrap: "break-word", // This helps with longer text wrapping
+  }}
+>
+  Complaint Form
+</motion.h1>
       <form onSubmit={handleSubmit}>
         <div
 

@@ -18,6 +18,10 @@ export const signin = async (req, res) => {
       // Check if the password matches
       if (user.password === req.body.password) {
         console.log("User authenticated:", user);
+        if(user.username === "admin")
+        {
+          return res.json({admin:"Admin Validated"});
+        }
         const [studentResults] = await db.execute(
           "SELECT * FROM student WHERE admno = ?",
           [user.username]

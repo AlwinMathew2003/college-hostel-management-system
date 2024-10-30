@@ -60,7 +60,7 @@ const ApologyRequest = () => {
         e.preventDefault();
 
         const requestData = {
-            _id: Math.random().toString(36).substr(2, 9),
+            _id: Adm_no_,
             Room_no,
             Stud_name,
             Reason,
@@ -119,19 +119,22 @@ const ApologyRequest = () => {
 </select>
 
                         </div>
-                        <div className="apology-request-form-group">
-                            <label htmlFor="student-name">Student Name:</label>
-                            <input
-                                type="text"
-                                id="student-name"
-                                name="student-name"
-                                className="apology-request-input"
-                                value={Stud_name}
-                                onChange={(e) => setStudentName(e.target.value)}
-                                placeholder="Auto-filled based on Admission No"
-                                readOnly
-                            />
-                        </div>
+                        <div className="apology-request-form-group mb-4">
+    <label htmlFor="student-name" className="block text-gray-700 font-medium mb-2">
+        Student Name:
+    </label>
+    <input
+        type="text"
+        id="student-name"
+        name="student-name"
+        className="apology-request-input w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        value={Stud_name}
+        onChange={(e) => setStudentName(e.target.value)}
+        placeholder="Auto-filled based on Admission No"
+        readOnly
+    />
+</div>
+
                         <div className="apology-request-form-group">
                             <label htmlFor="reason">Reason:</label>
                             <textarea

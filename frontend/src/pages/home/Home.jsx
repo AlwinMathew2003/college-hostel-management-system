@@ -21,8 +21,13 @@ const Home = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
 
   useEffect(() => {
-    // Show success toast on login
-    toast.success("Successfully logged in!");
+    if(localStorage.getItem("LoginSuccess")){
+      toast.success("Successfully logged in!");
+      setTimeout(() => {
+        localStorage.removeItem("LoginSuccess");
+      }, 100); // Adjust delay as needed
+    }
+
   }, []); // Empty dependency array to trigger only on mount
 
   const openModal = (event) => {
@@ -78,7 +83,7 @@ const Home = () => {
               <form>
                 <label htmlFor="currentPassword">Current Password</label><br />
                 <input
-                  type="password"
+                  type="text"
                   style={{ border: "1px solid black", width: "100%", borderRadius: "4px" }}
                   id="currentPassword"
                   name="currentPassword"
