@@ -48,7 +48,7 @@ const Navbar = ({openModal}) => {
           </div>
         </div>
         <a href="#">Messages</a>
-        <a href="http://localhost:5173/login">
+        <a href="http://localhost:5173/">
           <button onClick={handleLogout}>Logout</button>
         </a>
       </div>
