@@ -14,16 +14,6 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (!admno && !password) {
-      alert("Please enter your admission number and password."); // Both fields empty
-      return;
-    } else if (!admno) {
-      alert("Please enter your admission number."); // Admission number empty
-      return;
-    } else if (!password) {
-      alert("Please enter your password."); // Password empty
-      return;
-    }
 
     dispatch(loginStart());
     try {
