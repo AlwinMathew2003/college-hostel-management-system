@@ -7,7 +7,7 @@ export const apologyCount = async (req, res) => {
     const query = `
         SELECT COUNT(*) AS apology_count, GROUP_CONCAT(reason) AS reasons 
         FROM apology 
-        WHERE admno = ?`;
+        WHERE admno = ? AND status = 0`;
 
     console.log("Hello!");
 
