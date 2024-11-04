@@ -25,9 +25,10 @@ const ApologyRequestView = () => {
     }, []);
 
     const filteredData = data.filter(item =>
-        item.Stud_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.Adm_no.toString().toLowerCase().includes(searchTerm.toLowerCase())
+        item.Stud_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.admno?.toString().toLowerCase().includes(searchTerm.toLowerCase())
     ).slice(0, entries);
+    
 
     return (
         <div>
@@ -58,7 +59,7 @@ const ApologyRequestView = () => {
                                 type="text"
                                 placeholder="Search by name or admission number..."
                                 value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
+                                onChange={(e) => {setSearchTerm(e.target.value); console.log(searchTerm)}}
                                 className="apology-request-search-input"
                             />
                         </div>
