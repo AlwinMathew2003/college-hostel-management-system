@@ -80,7 +80,7 @@ const NameWiseReport = () => {
   
     // Add data rows
     messCut.forEach((item, index) => {
-      const yPosition = startY + 25 + index * lineHeight; // Adjust for header row and line height
+      var yPosition = startY + 25 + index * lineHeight; // Adjust for header row and line height
   
       // Ensure we fit the data within the page limits
       if (yPosition > 270) {

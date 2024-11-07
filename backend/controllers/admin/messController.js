@@ -31,7 +31,6 @@ export const messCut = async(req,res)=>{
 }
 
 export const dateWiseMessCut = async(req,res)=>{
-console.log("Hello!")
 console.log(req.params.date)
 const { selectedDate } = req.query;
 try{
@@ -58,4 +57,15 @@ catch(err){
     console.log(err);
     res.json(err);
 }
+}
+
+export const messCutRequest = async(req,res)=>{
+  try{
+    const [result] = await db.query(`select * from student join mess_request on student.admno = mess_request.admno`)
+    console.log(result);
+  }
+  catch(err)
+  {
+    console.log(err);
+  }
 }
