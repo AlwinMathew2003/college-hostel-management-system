@@ -101,7 +101,7 @@ const DateWiseReport = () => {
                     <td>{item.sem}</td>
                     <td>{item.room_no}</td>
                     <td>{item.department}</td>
-                    <td className="text-center text-green-500 text-2xl font-bold">{item.breakfast === 1 ? '✓' : ''}</td>
+                    <td className="text-center text-green-500 text-2xl font-bold">{item.breakfast === 1 ? '' : ''}</td>
                   <td className="text-center text-green-500 text-2xl font-bold">{item.lunch === 1 ? '✓' : ''}</td>
                   <td className="text-center text-green-500 text-2xl font-bold">{item.snack === 1 ? '✓' : ''}</td>
                   <td className="text-center text-green-500 text-2xl font-bold">{item.dinner === 1 ? '✓' : ''}</td>

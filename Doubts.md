@@ -135,3 +135,13 @@ Copy code
   ))}
 </select>
 Now, each option will represent a unique semester. The value of each option is set to semester.id, and the displayed text is semester.name. This makes it ready for a user to select from the unique semester options.
+
+    result = result.map(item => ({
+      ...item,
+      leaving_date: item.leaving_date instanceof Date ? item.leaving_date.toISOString().split("T")[0] : item.leaving_date,
+      returning_date: item.returning_date instanceof Date ? item.returning_date.toISOString().split("T")[0] : item.returning_date
+  }));
+  
+//   item.leaving_date instanceof Date checks if leaving_date is a Date object.
+// .toISOString().split("T")[0] converts the date to ISO format ("YYYY-MM-DDTHH:mm:ss.sssZ"), then splits it to keep only the date part ("YYYY-MM-DD").
+// This will give leaving_date and returning_date in the "YYYY-MM-DD" format for each object in the array.

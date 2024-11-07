@@ -61,11 +61,32 @@ catch(err){
 
 export const messCutRequest = async(req,res)=>{
   try{
-    const [result] = await db.query(`select * from student join mess_request on student.admno = mess_request.admno`)
+    var [result] = await db.query(`select * from student join mess_request on student.admno = mess_request.admno`)
     console.log(result);
+    result = result.map(item => ({
+      ...item,
+      leaving_date: item.leaving_date instanceof Date ? item.leaving_date.toISOString().split("T")[0] : item.leaving_date,
+      returning_date: item.returning_date instanceof Date ? item.returning_date.toISOString().split("T")[0] : item.returning_date
+  }));
+    
+    res.json(result);
   }
   catch(err)
   {
     console.log(err);
+  }
+}
+
+export const messCutUpdateStatus = async(req,res)=>{
+  const { admno } = req.params;
+  const { status } = req.body;
+
+  try {
+      // Update the status in the database
+      await db.query('UPDATE mess_request SET status = ? WHERE admno = ?', [status, admno]);
+      return res.status(200).json({ message: 'Status updated successfully.' });
+  } catch (error) {
+      console.error('Error updating status:', error);
+      return res.status(500).json({ error: 'Database error' });
   }
 }

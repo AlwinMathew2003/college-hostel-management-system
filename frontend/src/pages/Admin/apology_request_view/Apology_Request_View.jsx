@@ -40,10 +40,9 @@ const ApologyRequestView = () => {
     console.log(updatedStatus);
     // Update the status in the backend
     try {
-      await axios.put(
-        `http://localhost:5000/api/apologies/update/${item.id}`,
-        { status: updatedStatus }
-      );
+      await axios.put(`http://localhost:5000/api/apologies/update/${item.id}`, {
+        status: updatedStatus,
+      });
 
       // Fetch updated data from the backend after status change
       const response = await axios.get(
@@ -139,9 +138,9 @@ const ApologyRequestView = () => {
                       <button
                         className={`apology-request-action-button ${
                           item.status === "0"
-                            ? "bg-red-500 text-white"
-                            : "bg-green-500 text-white"
-                        } px-4 py-2 rounded`}
+                            ? "!bg-red-500 text-white"
+                            : "!bg-green-500 text-white"
+                        } px-4 py-2 rounded focus:outline-none active:scale-95`}
                         onClick={() => handleStatusChange(item)}
                       >
                         {item.status === "0" ? "Pending" : "Approved"}
