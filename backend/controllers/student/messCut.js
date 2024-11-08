@@ -55,7 +55,7 @@ export const messcutPermissionGet = async (req, res) => {
       FROM
         mess_request m
       LEFT JOIN
-        students s ON m.adm_no = s.adm_no
+        student s ON m.adm_no = s.admno
     `);
 
     res.status(200).json(permissions);

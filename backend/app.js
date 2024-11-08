@@ -6,8 +6,11 @@ import { set, connect } from "mongoose";
 import authUser from "./routes/authentication.js";
 import complaintRoutes from "./routes/student/complaintRoutes.js";
 import messcutpermissionRoutes from "./routes/student/messcutpermissionRoutes.js";
-import apologyRoutes from "./routes/admin/apologyRoutes.js"
-import passwordRoutes from "./routes/student/updatePassword.js"
+import apologyRoutes from "./routes/admin/apologyRoutes.js";
+import messCutRoutes from "./routes/admin/messCutRoutes.js";
+import passwordRoutes from "./routes/student/updatePassword.js";
+import apologyCountRoutes from "./routes/student/apologyRoutes.js";
+import studentRoutes from "./routes/student/studentRoutes.js";
 import db from "./mysql.js";
 
 
@@ -33,12 +36,14 @@ app.use(cors());
 
 
 app.use("/api/login", authUser);
-
+app.use("/api/student",apologyCountRoutes);
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/messcutpermissions",messcutpermissionRoutes);
 app.use("/api/apologies",apologyRoutes);
 app.use("/api/user",passwordRoutes);
 
+app.use("/api/admin",studentRoutes);
+app.use("/api/admin",messCutRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);

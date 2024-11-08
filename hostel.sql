@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2024 at 06:31 PM
+-- Generation Time: Nov 07, 2024 at 07:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -36,6 +36,16 @@ CREATE TABLE `apology` (
   `status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `apology`
+--
+
+INSERT INTO `apology` (`id`, `admno`, `reason`, `date`, `apology_no`, `status`) VALUES
+(0, 'testuser', 'Demo Apology Request', '2024-10-30 19:36:06', 1, '1'),
+(5, 'testuser', 'Sample Apology sent', '2024-11-04 13:39:51', 1, '1'),
+(6, 'testuser1', 'Sample Reason', '2024-11-04 22:10:40', 1234, '0'),
+(7, 'testuser1', 'asfalsdijf', '2024-11-05 02:50:53', 1, '0');
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +68,8 @@ INSERT INTO `complaints` (`_id`, `adm_no`, `Room_no`, `message`, `status`) VALUE
 (1, NULL, NULL, 'This is sample complain\n', '0'),
 (2, '123', NULL, 'hello', NULL),
 (3, '123', NULL, 'hello123', NULL),
-(4, 'testuser', NULL, 'Demo Request', '0');
+(4, 'testuser', NULL, 'Demo Request', '0'),
+(5, 'testuser', NULL, 'Sample complaint', '0');
 
 -- --------------------------------------------------------
 
@@ -107,7 +118,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `date`) VALUES
-(1, 'testuser', 'pass', '2024-10-29');
+(1, 'testuser', 'pass', '2024-10-29'),
+(2, 'admin', 'adminpassword', '2024-10-24'),
+(3, '12112020', 'pass', '2024-11-20'),
+(4, '12112013', 'pass', '2024-11-21'),
+(5, '12112014', 'pass', '2024-11-16');
 
 -- --------------------------------------------------------
 
@@ -118,14 +133,25 @@ INSERT INTO `login` (`id`, `username`, `password`, `date`) VALUES
 CREATE TABLE `mess_cut` (
   `id` int(10) NOT NULL,
   `admno` varchar(20) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `date` date NOT NULL DEFAULT current_timestamp(),
   `breakfast` tinyint(1) NOT NULL,
   `lunch` tinyint(1) NOT NULL,
   `snack` tinyint(1) NOT NULL,
   `dinner` tinyint(1) NOT NULL,
   `messcut_active` int(5) NOT NULL,
-  `request_id` int(100) NOT NULL
+  `request_id` int(100) NOT NULL,
+  `time` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mess_cut`
+--
+
+INSERT INTO `mess_cut` (`id`, `admno`, `date`, `breakfast`, `lunch`, `snack`, `dinner`, `messcut_active`, `request_id`, `time`) VALUES
+(1, '120', '2024-11-05', 1, 1, 0, 0, 0, 1201, '21:28:43'),
+(2, '121', '2024-11-05', 1, 1, 1, 1, 1, 1202, '21:28:43'),
+(3, '122', '2024-11-05', 1, 1, 1, 0, 0, 1203, '21:28:43'),
+(4, '123', '2024-11-05', 1, 1, 1, 1, 1, 1204, '21:28:43');
 
 -- --------------------------------------------------------
 
@@ -152,8 +178,9 @@ CREATE TABLE `mess_request` (
 --
 
 INSERT INTO `mess_request` (`id`, `admno`, `leaving_date`, `leaving_time`, `returning_date`, `returning_time`, `reason`, `status`, `remarks`, `apply_time`, `update_time`) VALUES
-(1, 'testuser', '2024-10-24', '22:54:00', '2024-10-26', '15:59:00', 'Demo Request', '0', '', '2024-10-29 22:56:46', '2024-10-29 22:56:46'),
-(2, 'testuser', '2024-10-26', '00:00:00', '2024-10-31', '16:00:00', 'Second Demo Request', '0', '', '2024-10-29 22:59:00', '2024-10-29 22:59:00');
+(1, '120', '2024-10-24', '22:54:00', '2024-10-26', '15:59:00', 'Demo Request', '1', '', '2024-10-29 22:56:46', '2024-10-29 22:56:46'),
+(2, '121', '2024-10-26', '00:00:00', '2024-10-31', '16:00:00', 'Second Demo Request', '1', '', '2024-10-29 22:59:00', '2024-10-29 22:59:00'),
+(3, '122', '2024-11-12', '01:55:00', '2024-11-22', '00:55:00', 'Sample Reason', '1', '', '2024-11-04 21:52:26', '2024-11-04 21:52:26');
 
 -- --------------------------------------------------------
 
@@ -191,7 +218,12 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`admno`, `name`, `room_no`, `department`, `sem`, `phone_no`, `guardian_name`, `guardian_no`, `jecc_mail`) VALUES
-('testuser', 'testname', '123', 'CSE', '7', '1234567890', 'guardian', '2154625145', 'test@gmail.com\r\n');
+('testuser', 'testname', '123', 'CSE', '7', '1234567890', 'guardian', '2154625145', 'test@gmail.com\r\n'),
+('testuser1', 'testname1', '234', 'CSE', '7', '3452345', 'guardian', '233453453', 'test@jecc.ac.in'),
+('120', 'user1', '122', 'CSE', '5', '51651515', 'user1_guardian', '684684684', 'user1@gmail.com'),
+('121', 'user2', '1212', 'CSE', '5', '68484684687', 'user2_guardian', '849843516514', 'user2@gmail.com\r\n'),
+('122', 'testname1', '234', 'CSE', '7', '3452345', 'guardian', '2134234234', 'test@gmail.com'),
+('123', 'testname2', '124', 'CSE', '7', '6541684684', 'testguardian', '98484984848', 'testname@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -254,7 +286,7 @@ ALTER TABLE `mess_time`
 -- AUTO_INCREMENT for table `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `fees`
@@ -272,19 +304,19 @@ ALTER TABLE `holiday`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `mess_cut`
 --
 ALTER TABLE `mess_cut`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mess_request`
 --
 ALTER TABLE `mess_request`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mess_time`

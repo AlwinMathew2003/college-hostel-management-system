@@ -34,4 +34,20 @@ router.get('/students', async (req, res) => {
   }
 });
 
+router.put('/update/:id',async(req,res)=>{
+  const { id } = req.params;
+  const { status } = req.body;
+
+  try {
+      // Update the status in the database
+      await db.query('UPDATE apology SET status = ? WHERE id = ?', [status, id]);
+      return res.status(200).json({ message: 'Status updated successfully.' });
+  } catch (error) {
+      console.error('Error updating status:', error);
+      return res.status(500).json({ error: 'Database error' });
+  }
+})
+
+
+
 export default router;
