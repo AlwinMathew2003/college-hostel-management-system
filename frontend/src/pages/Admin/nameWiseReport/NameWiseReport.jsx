@@ -35,7 +35,7 @@ const NameWiseReport = () => {
                             <option value="1">Semester 1</option>
                             <option value="2">Semester 2</option>
                             <option value="3">Semester 3</option>
-                            {/* Add more options as needed */}
+                            
                         </select>
                     </div>
                     <div className="name-wise-report-form-group">
